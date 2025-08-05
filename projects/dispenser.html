@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fluid Dispenser | Daniel Ayedegbe</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .centered-text {
+      text-align: center;
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    .section-title {
+      text-align: center;
+      color: white;
+      font-size: 1.8rem;
+      margin-top: 2rem;
+    }
+
+    .tech-stack {
+      text-align: center;
+      margin-top: 2rem;
+      color: #aaa;
+    }
+
+    .project-media {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .project-media img,
+    .project-media video {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    video {
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h2 class="logo"><a href="../index.html" style="color:white; text-decoration:none;">← Back to Portfolio</a></h2>
+</header>
+
+<h1 class="section-title">Automated Fluid Dispenser</h1>
+
+<div class="centered-text">
+  This project involved designing and building a custom mechatronics system to automate the precise dispensing of fluids for a small-scale manufacturing process. The primary challenge was to eliminate inconsistencies and reduce material waste inherent in manual dispensing methods. I engineered a robust solution using SolidWorks for the custom enclosure and nozzle holder, ensuring secure mounting on the production floor.
+
+  <br><br>
+  The system's intelligence came from an Arduino microcontroller, programmed in Python, which precisely controlled a peristaltic pump and monitored fluid levels with a sensor. This resulted in highly accurate, repeatable dispensing, significantly reducing waste and improving production efficiency.
+</div>
+
+<div class="tech-stack">
+  <h3>Tools & Tech Stack:</h3>
+  <p>Mechanical Design: SolidWorks</p>
+  <p>Control/Programming: Arduino, Python</p>
+  <p>Components: Peristaltic Pump, Fluid Level Sensor, Custom Enclosure</p>
+  <p>Application: Precision Fluid Dispensing</p>
+</div>
+
+<div class="project-media">
+  <img src="../static/Dispenser setup.jpeg" alt="Dispenser CAD Image">
+  <img src="../static/Dispenser Image.jpeg" alt="Arduino Setup Image">
+
+  <video controls>
+    <source src="../static/Disp Test.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <video controls>
+    <source src="../static/Disp vid.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<footer>
+  <p>Contact: danielayedegbe1@gmail.com</p>
+</footer>
+
+</body>
+</html>

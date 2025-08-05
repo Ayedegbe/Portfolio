@@ -1,429 +1,611 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Ayedegbe | Project Portfolio</title>
-    <link rel="stylesheet" href="./static/style.css">
-      <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: #f5f5f5;
-            color: #333;
-        }
-        .project {
-            padding: 1rem;
-            margin: 1rem auto;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            max-width: 95%;
-        }
-        .project img {
-            max-width: 800px;
-            height: 2000px;
-            display: block;
-            margin: 1rem auto;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            object-fit: contain;
-        }
-        video {
-            width: 70%;
-            max-height: 1600px;
-            height: auto;
-            display: block;
-            margin: 1rem auto;
-            border-radius: 6px;
-            object-fit: cover;
-        }
-        header, section, footer {
-            padding: 1rem;
-            max-width: 95%;
-            margin: auto;
-        }
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            padding: 1rem 0;
-        }
-        nav a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        h1, h2, h3 {
-            text-align: center;
-        }
-        ul {
-            padding-left: 1.5rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daniel Ayedegbe | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Daniel Ayedegbe</h1>
-        <p>Mechatronics & Software Engineer | Automation Specialist</p>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#software-projects">Software Projects</a>
-            <a href="#mechatronics-projects">Mechatronics Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I'm a dedicated Mechatronics Engineer passionate about building innovative solutions that seamlessly integrate mechanical systems, electronics, and advanced software. My expertise lies in transforming complex operational challenges into efficient, automated realities, directly helping businesses boost productivity, cut costs, and drive innovation.
-My core strengths encompass mechanical design (SolidWorks), embedded systems development (Arduino, PLC), and the implementation of sophisticated control algorithms (LabVIEW, Python). I specialize in creating intelligent, integrated systems, from designing precision automation tools for manufacturing and developing autonomous navigation systems with AI-driven path planning, to building smart environmental control solutions.
-I thrive on tackling real-world problems with a comprehensive engineering approach. Whether it's optimizing industrial processes, developing adaptive machinery, or leveraging cutting-edge technologies like AI for autonomous decision-making, my focus is always on delivering robust, high-value solutions tailored precisely to your needs.
-Let's connect to explore how my mechatronics and automation expertise can bring your next project to life.</p>
-    </section>
+<header>
+  <h2 class="logo">Daniel Ayedegbe</h2>
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-    <section id="mechatronics-projects">
-        <h2>Mechatronics Projects</h2>
+<section class="hero">
+  <h1>Hi, I'm Daniel Ayedegbe!</h1>
+  <p>
+    I build smart, reliable automation systems that blend mechanical design, software, and electronics into real-world solutions.
+  </p>
+</section>
 
-    <style>
-      .project video,
-        .project img {
-          width: 300px;
-          height: 300px;
-          object-fit: cover;
-          margin: 10px;
-          border-radius: 8px;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
+<section id="work" class="projects">
 
-        /* ✅ Properly separated media gallery block */
-        .media-gallery {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 1rem;
-          justify-content: center;
-          align-items: center;
-        }
+  <div class="project">
+    <a href="projects/rover.html">
+      <img src="static/Rover cad.png" alt="Autonomous Rover">
+    </a>
+    <div class="project-details">
+      <h3>Autonomous Rover</h3>
+      <p> Designed and implemented an AI-driven control system for an autonomous mobile robot, leveraging LabVIEW, A* path planning, and sensor fusion for intelligent navigation and obstacle avoidance.
+      </p>
 
-        .media-gallery img,
-        .media-gallery video {
-          width: 300px;
-          height: 300px;
-          object-fit: cover;
-          border-radius: 8px;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
-
-    </style>
-
-
-
-        <div class="project">
-          <h3>Automated Dispensing System</h3>
-
-          <p>This project was a custom-built mechatronics solution developed to solve a common and costly problem in small-scale manufacturing: the inaccurate and time-consuming manual dispensing of fluids.</p>
-
-          <h4>The Challenge</h4>
-          <p>
-            The client’s existing process relied on human operators to manually measure and dispense a specific fluid, which was prone to human error, led to inconsistent product quality, and resulted in significant material waste. The slow, repetitive task also created a bottleneck in their production line. My objective was to design and build a reliable, cost-effective automated system that could improve accuracy and free up staff for other critical tasks.
-          </p>
-
-          <h4>My Solution & Technical Approach</h4>
-
-          <p><strong>Mechanical Design:</strong> Using SolidWorks, I designed a custom enclosure for the system, which was engineered for easy and secure mounting on the production floor. The design included a custom-machined nozzle holder and housed all the components neatly, creating a robust and professional final product.</p>
-
-          <p><strong>Hardware Integration:</strong> The system’s core was an Arduino microcontroller which served as the brain. I integrated a precision peristaltic pump for accurate fluid delivery and a flow sensor for real-time volume monitoring, creating a closed-loop control system. A simple LCD and button interface were added for user interaction.</p>
-
-          <p><strong>Software & Control:</strong> I wrote the control logic in Arduino C++ and a Nextion HMI. The code handled the user interface, controlled the pump’s speed and duration, and logged dispensing data to ensure consistency.</p>
-
-          <h4>The Results & Impact</h4>
-          <p>
-            The final automated system delivered repeatable, accurate fluid dispensing, reducing material waste by an estimated 25% and eliminating human error. It significantly reduced task time and allowed the company to reallocate staff to more complex and value-adding roles. This project demonstrated the power of mechatronics to deliver tangible efficiency gains and cost savings for small businesses.
-          </p>
-
-          <h4>Key Skills Demonstrated</h4>
-          <ul>
-            <li>Mechanical Design (SolidWorks)</li>
-            <li>Embedded Systems (Arduino)</li>
-            <li>Control Systems & Programming (C++)</li>
-            <li>Hardware-Software Integration</li>
-            <li>Prototyping & System Testing</li>
-          </ul>
-
-          <p><strong>Tech:</strong> SolidWorks, C++, Arduino, Peristaltic pump, HMI design</p>
-
-        <div class="media-gallery">
-          <img src="static/Dispenser Image.jpeg" alt="Image of dispensing setup or SolidWorks CAD">
-          <img src="static/Dispenser setup.jpeg" alt="Image of dispensing setup or SolidWorks CAD">
-
-          <video controls>
-            <source src="static/Disp Test.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <video controls>
-            <source src="static/Disp vid.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
     </div>
+  </div>
 
-       <div class="project">
-          <h3>Autonomous Rover System</h3>
+  <div class="project">
+    <a href="projects/traffic.html">
+      <img src="static/installed lights.jpeg" alt="Smart Traffic Light">
+    </a>
+    <div class="project-details">
+      <h3>Smart Traffic Light</h3>
+      <p>Developed an intelligent, solar-powered traffic light system utilizing a Haiwell PLC, HMI, and smart cameras for adaptive, real-time traffic management and 99% uptime.</p>
 
-          <p>This project focused on the development of an intelligent control system for an autonomous mobile robot, demonstrating expertise in programming, sensor integration, and real-time decision-making.</p>
+    </div>
+  </div>
 
-          <h4>The Challenge</h4>
-          <p>
-            The objective was to enable a pre-built rover platform to navigate a defined environment autonomously while avoiding obstacles. The key challenge was to develop a robust and reliable control algorithm that could process sensor data in real-time and make intelligent decisions to steer the rover without human intervention.
-          </p>
+  <div class="project">
+    <a href="projects/dispenser.html">
+      <img src="static/Dispenser setup.jpeg" alt="Fluid Dispenser">
+    </a>
+    <div class="project-details">
+      <h3>Automated Dispenser</h3>
+      <p>Engineered a custom precision fluid dispensing system integrating SolidWorks mechanical design, Arduino, and Python for automated, high-accuracy material application in manufacturing.</p>
 
-          <h4>My Solution & Technical Approach</h4>
+    </div>
+  </div>
 
-          <p><strong>Sensor Integration:</strong> I integrated an array of sensors, including ultrasonic sensors for object detection and a gyroscope to determine the rover's orientation. This sensor data was the primary input for the control system, providing the rover with a comprehensive understanding of its environment and its own position within it.</p>
+  <div class="project">
+    <a href="projects/smart-home.html">
+      <img src="static/smarthome dashboard.png" alt="Smart Home Automation">
+    </a>
+    <div class="project-details">
+      <h3>Smart Home AI System</h3>
+      <p>Developed an AI-driven smart home system with a real-time dashboard for comprehensive house data, analyzing sensor inputs (temperature, humidity, power usage) to intelligently optimize power conservation and environmental control.</p>
 
-          <p><strong>Control System Programming:</strong> The core of the system was programmed in LabVIEW. I developed the control algorithms using its graphical programming environment to process the sensor inputs and make real-time decisions. The system utilized an A* path planning algorithm to determine the most efficient route and issued commands to the motor drivers to execute the path while dynamically avoiding obstacles.</p>
+    </div>
+  </div>
 
-          <h4>The Results & Impact</h4>
-          <p>
-            The final autonomous rover successfully demonstrated its ability to navigate a defined course and dynamically avoid both static and moving obstacles. The system proved that a well-conceived control algorithm, combined with advanced path planning and sensor fusion, could effectively enable a piece of hardware to function autonomously. This project highlights my ability to bridge the gap between hardware and intelligent control.
-          </p>
+  <div class="project">
+    <a href="projects/teststrip.html">
+      <img src="static/roller probes.png" alt="Diabetes Test Strip Automation">
+    </a>
+    <div class="project-details">
+      <h3>Diabetes Strip Automation</h3>
+      <p>Designed a conceptual automated system for non-destructive resistance measurement on printed sheets, utilizing roller resistor probes and an H-bridge for precision quality control.</p>
+    </div>
+  </div>
 
-          <h4>Key Skills Demonstrated</h4>
-          <ul>
-            <li>Robotics & Autonomous Navigation</li>
-            <li>Control Systems & Programming (LabVIEW)</li>
-            <li>Sensor Fusion & Integration (Ultrasonic, Gyroscope)</li>
-            <li>A* Path Planning Algorithm</li>
-            <li>Embedded Systems</li>
-          </ul>
+</section>
 
-          <p><strong>Tech:</strong> LabVIEW, Arduino, Ultrasonic Sensor, Gyroscope, Coordinate Mapping</p>
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <p>
+    Daniel Ayedegbe
 
-          <div class="media-gallery">
-            <img src="static/rover code.jpeg" alt="Autonomous Rover and LabVIEW programming session">
-            <video controls>
-              <source src="static/Rover vid.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
+Your Partner in Intelligent Automation & Problem Solving
 
-        <div class="project">
-          <h3>Smart Traffic Light Control System</h3>
+  Hi, I'm Daniel, and I'm a Mechatronics Engineer with a singular focus: building things that work and solving complex problems with creative, automated solutions. My passion lies in taking an idea, dissecting a challenge, and then meticulously figuring out how all the pieces – mechanical, electrical, and software – fit together to create a seamless, intelligent system.
+<p/>
+   <p> My expertise spans the entire spectrum of mechatronics, from the initial spark of an idea to its robust implementation. I'm highly skilled in 3D design and rapid prototyping, bringing concepts to life through tools like SolidWorks. Beyond the design phase, my capabilities extend deeply into factory automation, where I leverage PLCs (Programmable Logic Controllers) and HMIs (Human-Machine Interfaces) to streamline operations and enhance industrial efficiency.
+What truly excites me is the frontier of intelligent automation, particularly in developing systems with Arduino and Raspberry Pi.
+  <p> I thrive on integrating sophisticated sensors, crafting precise control algorithms, and implementing AI-driven decision-making to create autonomous systems that learn and adapt. Whether it's an AI-powered autonomous rover navigating complex terrains, a smart traffic system optimized by real-time data and solar power, or a precision automated dispenser for manufacturing, my work is always about delivering tangible results and measurable improvements.
+Most of what I know, I've learned by doing – through a hands-on process of building, rigorously testing, identifying flaws, and iteratively refining until the solution is not just functional, but exceptional. While my focus has always been on the engineering itself, leading to many more projects beyond what's visually showcased, my commitment remains to delivering clean, well-organized code and systems that are intuitive, reliable, and truly solve your problems.
+</p>
+  <p>  I'm here to translate your challenges into innovative, automated realities. Let's connect and build something amazing together.
+</p>
+</section>
 
-          <p>This project demonstrates a comprehensive, real-time control system for a smart traffic light, combining renewable energy, intelligent traffic detection, and robust programming. The system was designed to increase efficiency and reliability while operating autonomously off-grid.</p>
+<footer id="contact">
+  <p>Contact: danielayedegbe1@gmail.com</p>
+  <p>GitHub: github.com/ayedegbe | LinkedIn: linkedin.com/in/daniel-ayedegbe</p>
+  <p>© 2025 Daniel Ayedegbe</p>
+</footer>
 
-          <h4>The Challenge</h4>
-          <p>
-            The objective was to move beyond simple, timed traffic lights and create an intelligent control system that could adapt to real-time traffic conditions. A core requirement was for the system to be energy-independent, ensuring maximum uptime without relying on a constant external power supply.
-          </p>
-
-          <h4>My Solution & Technical Approach</h4>
-
-          <p><strong>Intelligent Control:</strong> The system's brain was a Haiwell PLC, which was programmed to read inputs from multiple sources and make real-time decisions. The user interface was designed using the Haiwell HMI, providing an intuitive way to monitor and program the system.</p>
-
-          <p><strong>Traffic Detection:</strong> I integrated Cloudbox smart cameras to perform real-time traffic detection. The data from these cameras allowed the PLC to dynamically adjust traffic light timings based on actual traffic flow, rather than a fixed schedule.</p>
-
-          <p><strong>Renewable Energy System:</strong> To ensure exceptional reliability, I integrated solar panels and batteries, providing a self-sufficient power source. This power management system was engineered for 99% uptime, making the solution ideal for off-grid or remote locations.</p>
-
-          <p><strong>Programming Logic:</strong> The system included advanced features such as time-of-day programming, allowing for different traffic patterns during peak and off-peak hours.</p>
-
-          <h4>The Results & Impact</h4>
-          <p>
-            The final system successfully demonstrated the power of a fully integrated mechatronic's solution. By using smart cameras for traffic detection and time-of-day programming, it was able to significantly improve traffic flow and reduce congestion. The solar-powered design with a battery backup delivered on the critical requirement for 99% uptime, making it a reliable and sustainable solution.
-          </p>
-
-          <h4>Key Skills Demonstrated</h4>
-          <ul>
-            <li>PLC Programming & Control Systems</li>
-            <li>HMI Design & User Interface</li>
-            <li>Sensor Integration (Smart Cameras)</li>
-            <li>Renewable Energy Systems (Solar & Battery)</li>
-            <li>System Architecture & Integration</li>
-          </ul>
-
-          <p><strong>Tech:</strong> HMI, PLC (Ladder Logic), Solar Panels, Smart Cameras, Battery System</p>
-
-          <div class="media-gallery">
-            <img src="static/HMI junction.png" alt="HMI simulation of smart traffic light system">
-            <img src="static/Traffic Light Panell.jpeg" alt="Installed traffic light control panel with PLC">
-            <img src="static/installed lights.jpeg" alt="Installed traffic lights in outdoor environment">
-          </div>
-        </div>
-
-        <div class="project">
-              <h3>Automation Upgrades for Diabetes Test Strip Manufacturing (Concept & Design)</h3>
-
-              <p>This project was a comprehensive design and conceptualization effort focused on identifying opportunities for automation and efficiency improvements within a diabetes test strip manufacturing process. The goal was to propose innovative mechatronic solutions to enhance production throughput, reduce errors, and optimize material handling.</p>
-
-              <h4>The Challenge</h4>
-              <p>
-                The manufacturing of diabetes test strips involved several manual or semi-automated processes that were prone to human error, limited production speed, and resulted in inconsistencies—particularly in the precision spreading of materials and the quality control of resistance measurements. The challenge was to analyze the existing workflow, pinpoint specific bottlenecks, and design a conceptual automation solution to address them.
-              </p>
-
-              <h4>My Solution & Technical Approach</h4>
-
-              <p><strong>Automated Precision Spreading Tool:</strong> I designed an automated tool incorporating a servo motor attachment to precisely control the squeegee placement for highly accurate and consistent material spreading. This module was conceived to eliminate the variability inherent in manual application, ensuring uniform layers on each test strip.</p>
-
-              <p><strong>Non-Destructive Resistance Measurement Equipment:</strong> I conceptualized and specified a non-destructive quality control system. This equipment featured roller resistor probes designed to make contact with the test strips without damaging them. These probes were connected to an H-bridge circuit, allowing for precise resistance measurements to be taken efficiently and automatically, integrating seamlessly into the production line.</p>
-
-              <p><strong>System Integration (Conceptual):</strong> The design included the conceptual integration of these tools into the existing manufacturing line, outlining how a central control system (e.g., PLC, HMI) would manage their synchronized operation for optimal throughput and quality.</p>
-
-              <h4>The Results & Impact (Conceptual)</h4>
-              <p>
-                While this project remained in the design and conceptualization phase, the proposed automation upgrades demonstrated a clear path to significantly improving the efficiency and quality of diabetes test strip manufacturing. By automating precision spreading and implementing non-destructive resistance measurement, the design aimed to reduce material waste, minimize rework, and ensure higher product consistency. This project highlights my ability to analyze complex industrial processes, design innovative mechatronic solutions, and provide a robust blueprint for future automation initiatives.
-              </p>
-
-              <h4>Key Skills Demonstrated</h4>
-              <ul>
-                <li>Manufacturing Process Analysis</li>
-                <li>Conceptual System Design & Architecture</li>
-                <li>Precision Actuation (Servo Motor Control)</li>
-                <li>Non-Destructive Testing (NDT) Principles</li>
-                <li>Electrical Circuit Design (H-Bridge)</li>
-                <li>Automation Strategy & Optimization</li>
-                <li>Problem Identification & Solution Proposal</li>
-                <li>Technical Specification & Planning</li>
-              </ul>
-
-              <p><strong>Tech:</strong> Servo Motors, H-Bridge Circuits, Sensors, PLC/HMI Integration (concept), CAD Design</p>
-
-              <div class="media-gallery">
-                <img src="static/sof.png" alt="Strip processing machine or testing interface">
-                <!-- Add conceptual schematics or CAD images here when available -->
-              </div>
-            </div>
-
-
-
-        <div class="project">
-          <h3>Smart Home Automation System with AI Control</h3>
-
-          <p>This project is a comprehensive and ongoing effort to build an intelligent home automation system focused on energy conservation and environmental control. It integrates hardware, server-side development, and machine learning to create a proactive and efficient control system.</p>
-
-          <h4>The Challenge</h4>
-          <p>
-            The objective is to move beyond simple automation and create a system that intelligently manages a home environment. The goal is to conserve power and maintain optimal comfort levels by making decisions based on real-time data, rather than just pre-programmed schedules.
-          </p>
-
-          <h4>My Solution & Technical Approach</h4>
-
-          <p><strong>Hardware Layer:</strong> The system's foundation is built on an Arduino controller which is responsible for gathering real-time data from various sensors. These sensors monitor key environmental metrics such as temperature, humidity, time of day, and power usage.</p>
-
-          <p><strong>Data & Server Layer:</strong> The Arduino communicates with a central server, which acts as a data hub. The server stores all the sensor readings and provides a platform for the system's control logic.</p>
-
-          <p><strong>The AI Component:</strong> This is the most advanced part of the project. A custom-built AI model is being developed to analyze the historical and real-time power usage data. Based on these insights, the model makes autonomous control decisions—such as adjusting temperature set points or managing device power—to maximize efficiency and achieve a desired outcome.</p>
-
-          <h4>Current Status & Impact</h4>
-          <p>
-            This project has a functional prototype that successfully gathers data and communicates with the server. The AI model is currently being trained to take control decisions based on power usage data. The final system will demonstrate the power of intelligent automation to significantly reduce energy costs and create a more comfortable, responsive living environment.
-          </p>
-
-          <h4>Key Skills Demonstrated</h4>
-          <ul>
-            <li>Hardware Prototyping (Arduino)</li>
-            <li>Embedded Systems</li>
-            <li>Server-Side Development</li>
-            <li>AI & Machine Learning</li>
-            <li>Data Analysis & Systems Integration</li>
-          </ul>
-
-          <p><strong>Tech:</strong> Arduino, Sensors, Flask, Python, AI/ML, Real-Time Monitoring</p>
-
-          <div class="media-gallery">
-            <img src="static/smarthome dashboard.png" alt="Smart Home Automation Dashboard UI">
-          </div>
-        </div>
-        </section>
-<!--    <section id="software-projects">-->
-<!--        <h2>Software Projects</h2>-->
-<!--        <div class="project">-->
-<!--            <h3>Loan Management System</h3>-->
-<!--            <p>Backend tool for managing loans, sending automated email reminders, and exporting data via CSV and Google Sheets. Includes secure login, payment recording, and due-date tracking features.</p>-->
-<!--            <p><strong>Tech:</strong> Python, Flask, PostgreSQL, Flask-Mail, SMTP </p>-->
-<!--            <img src="static/Dashboard 2.png" alt="Loan Management System Dashboard - Clients and Loans Overview">-->
-<!--            <img src="static/Login page.png" alt="Loan Tracker Worker Login Screen">-->
-<!--            <img src="static/Dashboard.png" alt="Loan Tracker Worker Login Screen">-->
-<!--        </div>-->
-
-<!--        <div class="project">-->
-<!--            <h3>Inventory Management API</h3>-->
-<!--            <p>RESTful API for maintaining inventory, with CRUD operations, Swagger documentation, and secure access control. Designed for scalable warehouse environments.</p>-->
-<!--            <p><strong>Tech:</strong> Flask, PostgreSQL, Docker, CI/CD</p>-->
-<!--            <img src="static/sof.png" alt="Inventory API Swagger documentation mockup">-->
-<!--        </div>-->
-
-<!--        <div class="project">-->
-<!--            <h3>Expense Tracker (Full-Stack)</h3>-->
-<!--            <p>Secure web application for tracking and categorizing personal expenses with user authentication and data visualisation features.</p>-->
-<!--            <p><strong>Tech:</strong> Flask, JavaScript, CSS, Chart.js</p>-->
-<!--            <img src="static/sof.png" alt="Expense Tracker Dashboard with category-wise charts">-->
-<!--        </div>-->
-<!--    </section>-->
-
-    <section id="experience">
-   <h2>
-    Experience
-   </h2>
-   <ul>
-    <li>
-     <strong>
-      Sava Technologies – Automation Engineer (London, UK) –
-     </strong>
-     Built Python tools for analysing 10k+ real-time sensor data points per test run, improving fault detection by 25%. Developed embedded control logic and data pipelines for a microlitre-precision dispensing system deployed in ISO-8 conditions. Optimised hardware iterations using SolidWorks and FDM 3D printing.
-    </li>
-    <li>
-     <strong>
-      Hoglet – Software Engineer / Co-Founder (Ibadan, Nigeria) –
-     </strong>
-     Led development of a Flask-based MVP that helped 500+ users convert plastic waste into redeemable credits. Built and maintained a secure backend and payment system, processing 1,000+ transactions during pilot deployment.
-    </li>
-    <li>
-     <strong>
-      British American Tobacco – Maintenance Engineer (Ibadan, Nigeria) –
-     </strong>
-     Digitised 200+ machine parts, improving maintenance accuracy and reducing unplanned downtime by 12%. Applied SAP PM and Lean tools to optimise preventive maintenance workflows; reduced out-of-order incidents by 80%.
-    </li>
-    <li>
-     <strong>
-      Automation Engineering Academy – Automation Engineer (Lagos, Nigeria) –
-     </strong>
-     Designed and deployed 4 PLC-powered solar traffic systems, achieving &gt;99% uptime in unstable grid areas. Delivered 5+ training sessions and reduced ongoing support needs by 50%.
-    </li>
-   </ul>
-  </section>
-     <section id="education">
-   <h2>
-    Education
-   </h2>
-   <ul>
-    <li>
-     <strong>
-      MSc – Mechatronics Engineering and Automation –
-     </strong>
-     University of Strathclyde, UK (2023 – 2024). Dissertation: Smart energy forecasting using ARIMA and Fuzzy Logic. Focus: Embedded software, intelligent systems, data-driven automation.
-    </li>
-    <li>
-     <strong>
-      B.Eng. – Mechatronics Engineering –
-     </strong>
-     Afe Babalola University, Nigeria (2016 – 2020). Final Project: Designed a digital range-measuring and level-sensing system. Tools: Visual Basic, MATLAB, C, FluidSIM.
-    </li>
-   </ul>
-  </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: danielayedegbe1@gmail.com</p>
-        <p>GitHub: github.com/ayedegbe</p>
-        <p>LinkedIn: linkedin.com/in/daniel-ayedegbe</p>
-    </section>
-
-    <footer>
-        <p>© 2025 Daniel Ayedegbe</p>
-    </footer>
 </body>
 </html>
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8" />-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
+<!--  <title>Daniel Ayedegbe</title>-->
+<!--  <link rel="stylesheet" href="style.css" />-->
+<!--</head>-->
+<!--<body>-->
+
+<!--  <header>-->
+<!--    <h2 class="logo">Daniel Ayedegbe</h2>-->
+<!--    <nav>-->
+<!--      <a href="#work">Work</a>-->
+<!--      <a href="#about">About</a>-->
+<!--      <a href="#contact">Contact</a>-->
+<!--    </nav>-->
+<!--  </header>-->
+
+<!--  <section class="hero">-->
+<!--    <h1>Hi, I'm Daniel Ayedegbe!</h1>-->
+<!--    <p>-->
+<!--      I'm Daniel, a Mechatronics Engineer passionate about building intelligent systems that work.-->
+<!--      I specialise in integrating hardware and software to solve real-world problems, from-->
+<!--      smart automation to complex control solutions.-->
+<!--    </p>-->
+<!--  </section>-->
+
+<!--  <section id="work" class="projects">-->
+<!--    <div class="project">-->
+<!--      <img src="static/rover code.jpeg" alt="Automatic Rover">-->
+<!--      <div class="project-details">-->
+<!--        <h3>Automatic Rover</h3>-->
+<!--        <p>2025</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="project">-->
+<!--      <img src="static/installed lights.jpeg" alt="Smart Traffic Light">-->
+<!--      <div class="project-details">-->
+<!--        <h3>Smart Traffic Light</h3>-->
+<!--        <p>2025</p>-->
+
+<!--      </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Add more project cards as needed &ndash;&gt;-->
+<!--  </section>-->
+
+<!--  <section id="about" class="about">-->
+<!--    <h2>About Me</h2>-->
+<!--    <p>-->
+<!--      I'm a dedicated Mechatronics Engineer passionate about building innovative solutions that seamlessly integrate-->
+<!--      mechanical systems, electronics, and software. I enjoy solving real-world challenges through smart automation-->
+<!--      and intelligent systems design.-->
+<!--    </p>-->
+<!--  </section>-->
+
+<!--  <footer id="contact">-->
+<!--    <p>Contact: danielayedegbe1@gmail.com</p>-->
+<!--    <p>GitHub: github.com/ayedegbe | LinkedIn: linkedin.com/in/daniel-ayedegbe</p>-->
+<!--    <p>© 2025 Daniel Ayedegbe</p>-->
+<!--  </footer>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Daniel Ayedegbe | Project Portfolio</title>-->
+<!--    <link rel="stylesheet" href="./static/style.css">-->
+<!--      <style>-->
+<!--        body {-->
+<!--            margin: 0;-->
+<!--            font-family: 'Segoe UI', sans-serif;-->
+<!--            background: #f5f5f5;-->
+<!--            color: #333;-->
+<!--        }-->
+<!--        .project {-->
+<!--            padding: 1rem;-->
+<!--            margin: 1rem auto;-->
+<!--            background: white;-->
+<!--            border-radius: 8px;-->
+<!--            box-shadow: 0 0 10px rgba(0,0,0,0.1);-->
+<!--            max-width: 95%;-->
+<!--        }-->
+<!--        .project img {-->
+<!--            max-width: 800px;-->
+<!--            height: 2000px;-->
+<!--            display: block;-->
+<!--            margin: 1rem auto;-->
+<!--            border: 1px solid #ccc;-->
+<!--            border-radius: 6px;-->
+<!--            object-fit: contain;-->
+<!--        }-->
+<!--        video {-->
+<!--            width: 70%;-->
+<!--            max-height: 1600px;-->
+<!--            height: auto;-->
+<!--            display: block;-->
+<!--            margin: 1rem auto;-->
+<!--            border-radius: 6px;-->
+<!--            object-fit: cover;-->
+<!--        }-->
+<!--        header, section, footer {-->
+<!--            padding: 1rem;-->
+<!--            max-width: 95%;-->
+<!--            margin: auto;-->
+<!--        }-->
+<!--        nav {-->
+<!--            display: flex;-->
+<!--            flex-wrap: wrap;-->
+<!--            gap: 1rem;-->
+<!--            justify-content: center;-->
+<!--            padding: 1rem 0;-->
+<!--        }-->
+<!--        nav a {-->
+<!--            color: #007bff;-->
+<!--            text-decoration: none;-->
+<!--            font-weight: 500;-->
+<!--        }-->
+<!--        h1, h2, h3 {-->
+<!--            text-align: center;-->
+<!--        }-->
+<!--        ul {-->
+<!--            padding-left: 1.5rem;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <header>-->
+<!--        <h1>Daniel Ayedegbe</h1>-->
+<!--        <p>Mechatronics & Software Engineer | Automation Specialist</p>-->
+<!--        <nav>-->
+<!--            <a href="#about">About</a>-->
+<!--            <a href="#software-projects">Software Projects</a>-->
+<!--            <a href="#mechatronics-projects">Mechatronics Projects</a>-->
+<!--            <a href="#experience">Experience</a>-->
+<!--            <a href="#contact">Contact</a>-->
+<!--        </nav>-->
+<!--    </header>-->
+
+<!--    <section id="about">-->
+<!--        <h2>About Me</h2>-->
+<!--        <p>I'm a dedicated Mechatronics Engineer passionate about building innovative solutions that seamlessly integrate mechanical systems, electronics, and advanced software. My expertise lies in transforming complex operational challenges into efficient, automated realities, directly helping businesses boost productivity, cut costs, and drive innovation.-->
+<!--My core strengths encompass mechanical design (SolidWorks), embedded systems development (Arduino, PLC), and the implementation of sophisticated control algorithms (LabVIEW, Python). I specialize in creating intelligent, integrated systems, from designing precision automation tools for manufacturing and developing autonomous navigation systems with AI-driven path planning, to building smart environmental control solutions.-->
+<!--I thrive on tackling real-world problems with a comprehensive engineering approach. Whether it's optimizing industrial processes, developing adaptive machinery, or leveraging cutting-edge technologies like AI for autonomous decision-making, my focus is always on delivering robust, high-value solutions tailored precisely to your needs.-->
+<!--Let's connect to explore how my mechatronics and automation expertise can bring your next project to life.</p>-->
+<!--    </section>-->
+
+<!--    <section id="mechatronics-projects">-->
+<!--        <h2>Mechatronics Projects</h2>-->
+
+<!--    <style>-->
+<!--      .project video,-->
+<!--        .project img {-->
+<!--          width: 300px;-->
+<!--          height: 300px;-->
+<!--          object-fit: cover;-->
+<!--          margin: 10px;-->
+<!--          border-radius: 8px;-->
+<!--          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+
+<!--        /* ✅ Properly separated media gallery block */-->
+<!--        .media-gallery {-->
+<!--          display: flex;-->
+<!--          flex-wrap: wrap;-->
+<!--          gap: 1rem;-->
+<!--          justify-content: center;-->
+<!--          align-items: center;-->
+<!--        }-->
+
+<!--        .media-gallery img,-->
+<!--        .media-gallery video {-->
+<!--          width: 300px;-->
+<!--          height: 300px;-->
+<!--          object-fit: cover;-->
+<!--          border-radius: 8px;-->
+<!--          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+
+<!--    </style>-->
+
+
+
+<!--        <div class="project">-->
+<!--          <h3>Automated Dispensing System</h3>-->
+
+<!--          <p>This project was a custom-built mechatronics solution developed to solve a common and costly problem in small-scale manufacturing: the inaccurate and time-consuming manual dispensing of fluids.</p>-->
+
+<!--          <h4>The Challenge</h4>-->
+<!--          <p>-->
+<!--            The client’s existing process relied on human operators to manually measure and dispense a specific fluid, which was prone to human error, led to inconsistent product quality, and resulted in significant material waste. The slow, repetitive task also created a bottleneck in their production line. My objective was to design and build a reliable, cost-effective automated system that could improve accuracy and free up staff for other critical tasks.-->
+<!--          </p>-->
+
+<!--          <h4>My Solution & Technical Approach</h4>-->
+
+<!--          <p><strong>Mechanical Design:</strong> Using SolidWorks, I designed a custom enclosure for the system, which was engineered for easy and secure mounting on the production floor. The design included a custom-machined nozzle holder and housed all the components neatly, creating a robust and professional final product.</p>-->
+
+<!--          <p><strong>Hardware Integration:</strong> The system’s core was an Arduino microcontroller which served as the brain. I integrated a precision peristaltic pump for accurate fluid delivery and a flow sensor for real-time volume monitoring, creating a closed-loop control system. A simple LCD and button interface were added for user interaction.</p>-->
+
+<!--          <p><strong>Software & Control:</strong> I wrote the control logic in Arduino C++ and a Nextion HMI. The code handled the user interface, controlled the pump’s speed and duration, and logged dispensing data to ensure consistency.</p>-->
+
+<!--          <h4>The Results & Impact</h4>-->
+<!--          <p>-->
+<!--            The final automated system delivered repeatable, accurate fluid dispensing, reducing material waste by an estimated 25% and eliminating human error. It significantly reduced task time and allowed the company to reallocate staff to more complex and value-adding roles. This project demonstrated the power of mechatronics to deliver tangible efficiency gains and cost savings for small businesses.-->
+<!--          </p>-->
+
+<!--          <h4>Key Skills Demonstrated</h4>-->
+<!--          <ul>-->
+<!--            <li>Mechanical Design (SolidWorks)</li>-->
+<!--            <li>Embedded Systems (Arduino)</li>-->
+<!--            <li>Control Systems & Programming (C++)</li>-->
+<!--            <li>Hardware-Software Integration</li>-->
+<!--            <li>Prototyping & System Testing</li>-->
+<!--          </ul>-->
+
+<!--          <p><strong>Tech:</strong> SolidWorks, C++, Arduino, Peristaltic pump, HMI design</p>-->
+
+<!--        <div class="media-gallery">-->
+<!--          <img src="static/Dispenser Image.jpeg" alt="Image of dispensing setup or SolidWorks CAD">-->
+<!--          <img src="static/Dispenser setup.jpeg" alt="Image of dispensing setup or SolidWorks CAD">-->
+
+<!--          <video controls>-->
+<!--            <source src="static/Disp Test.mp4" type="video/mp4">-->
+<!--            Your browser does not support the video tag.-->
+<!--          </video>-->
+
+<!--          <video controls>-->
+<!--            <source src="static/Disp vid.mp4" type="video/mp4">-->
+<!--            Your browser does not support the video tag.-->
+<!--          </video>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--       <div class="project">-->
+<!--          <h3>Autonomous Rover System</h3>-->
+
+<!--          <p>This project focused on the development of an intelligent control system for an autonomous mobile robot, demonstrating expertise in programming, sensor integration, and real-time decision-making.</p>-->
+
+<!--          <h4>The Challenge</h4>-->
+<!--          <p>-->
+<!--            The objective was to enable a pre-built rover platform to navigate a defined environment autonomously while avoiding obstacles. The key challenge was to develop a robust and reliable control algorithm that could process sensor data in real-time and make intelligent decisions to steer the rover without human intervention.-->
+<!--          </p>-->
+
+<!--          <h4>My Solution & Technical Approach</h4>-->
+
+<!--          <p><strong>Sensor Integration:</strong> I integrated an array of sensors, including ultrasonic sensors for object detection and a gyroscope to determine the rover's orientation. This sensor data was the primary input for the control system, providing the rover with a comprehensive understanding of its environment and its own position within it.</p>-->
+
+<!--          <p><strong>Control System Programming:</strong> The core of the system was programmed in LabVIEW. I developed the control algorithms using its graphical programming environment to process the sensor inputs and make real-time decisions. The system utilized an A* path planning algorithm to determine the most efficient route and issued commands to the motor drivers to execute the path while dynamically avoiding obstacles.</p>-->
+
+<!--          <h4>The Results & Impact</h4>-->
+<!--          <p>-->
+<!--            The final autonomous rover successfully demonstrated its ability to navigate a defined course and dynamically avoid both static and moving obstacles. The system proved that a well-conceived control algorithm, combined with advanced path planning and sensor fusion, could effectively enable a piece of hardware to function autonomously. This project highlights my ability to bridge the gap between hardware and intelligent control.-->
+<!--          </p>-->
+
+<!--          <h4>Key Skills Demonstrated</h4>-->
+<!--          <ul>-->
+<!--            <li>Robotics & Autonomous Navigation</li>-->
+<!--            <li>Control Systems & Programming (LabVIEW)</li>-->
+<!--            <li>Sensor Fusion & Integration (Ultrasonic, Gyroscope)</li>-->
+<!--            <li>A* Path Planning Algorithm</li>-->
+<!--            <li>Embedded Systems</li>-->
+<!--          </ul>-->
+
+<!--          <p><strong>Tech:</strong> LabVIEW, Arduino, Ultrasonic Sensor, Gyroscope, Coordinate Mapping</p>-->
+
+<!--          <div class="media-gallery">-->
+<!--            <img src="static/rover code.jpeg" alt="Autonomous Rover and LabVIEW programming session">-->
+<!--            <video controls>-->
+<!--              <source src="static/Rover vid.mp4" type="video/mp4">-->
+<!--              Your browser does not support the video tag.-->
+<!--            </video>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="project">-->
+<!--          <h3>Smart Traffic Light Control System</h3>-->
+
+<!--          <p>This project demonstrates a comprehensive, real-time control system for a smart traffic light, combining renewable energy, intelligent traffic detection, and robust programming. The system was designed to increase efficiency and reliability while operating autonomously off-grid.</p>-->
+
+<!--          <h4>The Challenge</h4>-->
+<!--          <p>-->
+<!--            The objective was to move beyond simple, timed traffic lights and create an intelligent control system that could adapt to real-time traffic conditions. A core requirement was for the system to be energy-independent, ensuring maximum uptime without relying on a constant external power supply.-->
+<!--          </p>-->
+
+<!--          <h4>My Solution & Technical Approach</h4>-->
+
+<!--          <p><strong>Intelligent Control:</strong> The system's brain was a Haiwell PLC, which was programmed to read inputs from multiple sources and make real-time decisions. The user interface was designed using the Haiwell HMI, providing an intuitive way to monitor and program the system.</p>-->
+
+<!--          <p><strong>Traffic Detection:</strong> I integrated Cloudbox smart cameras to perform real-time traffic detection. The data from these cameras allowed the PLC to dynamically adjust traffic light timings based on actual traffic flow, rather than a fixed schedule.</p>-->
+
+<!--          <p><strong>Renewable Energy System:</strong> To ensure exceptional reliability, I integrated solar panels and batteries, providing a self-sufficient power source. This power management system was engineered for 99% uptime, making the solution ideal for off-grid or remote locations.</p>-->
+
+<!--          <p><strong>Programming Logic:</strong> The system included advanced features such as time-of-day programming, allowing for different traffic patterns during peak and off-peak hours.</p>-->
+
+<!--          <h4>The Results & Impact</h4>-->
+<!--          <p>-->
+<!--            The final system successfully demonstrated the power of a fully integrated mechatronic's solution. By using smart cameras for traffic detection and time-of-day programming, it was able to significantly improve traffic flow and reduce congestion. The solar-powered design with a battery backup delivered on the critical requirement for 99% uptime, making it a reliable and sustainable solution.-->
+<!--          </p>-->
+
+<!--          <h4>Key Skills Demonstrated</h4>-->
+<!--          <ul>-->
+<!--            <li>PLC Programming & Control Systems</li>-->
+<!--            <li>HMI Design & User Interface</li>-->
+<!--            <li>Sensor Integration (Smart Cameras)</li>-->
+<!--            <li>Renewable Energy Systems (Solar & Battery)</li>-->
+<!--            <li>System Architecture & Integration</li>-->
+<!--          </ul>-->
+
+<!--          <p><strong>Tech:</strong> HMI, PLC (Ladder Logic), Solar Panels, Smart Cameras, Battery System</p>-->
+
+<!--          <div class="media-gallery">-->
+<!--            <img src="static/HMI junction.png" alt="HMI simulation of smart traffic light system">-->
+<!--            <img src="static/Traffic Light Panell.jpeg" alt="Installed traffic light control panel with PLC">-->
+<!--            <img src="static/installed lights.jpeg" alt="Installed traffic lights in outdoor environment">-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="project">-->
+<!--              <h3>Automation Upgrades for Diabetes Test Strip Manufacturing (Concept & Design)</h3>-->
+
+<!--              <p>This project was a comprehensive design and conceptualization effort focused on identifying opportunities for automation and efficiency improvements within a diabetes test strip manufacturing process. The goal was to propose innovative mechatronic solutions to enhance production throughput, reduce errors, and optimize material handling.</p>-->
+
+<!--              <h4>The Challenge</h4>-->
+<!--              <p>-->
+<!--                The manufacturing of diabetes test strips involved several manual or semi-automated processes that were prone to human error, limited production speed, and resulted in inconsistencies—particularly in the precision spreading of materials and the quality control of resistance measurements. The challenge was to analyze the existing workflow, pinpoint specific bottlenecks, and design a conceptual automation solution to address them.-->
+<!--              </p>-->
+
+<!--              <h4>My Solution & Technical Approach</h4>-->
+
+<!--              <p><strong>Automated Precision Spreading Tool:</strong> I designed an automated tool incorporating a servo motor attachment to precisely control the squeegee placement for highly accurate and consistent material spreading. This module was conceived to eliminate the variability inherent in manual application, ensuring uniform layers on each test strip.</p>-->
+
+<!--              <p><strong>Non-Destructive Resistance Measurement Equipment:</strong> I conceptualized and specified a non-destructive quality control system. This equipment featured roller resistor probes designed to make contact with the test strips without damaging them. These probes were connected to an H-bridge circuit, allowing for precise resistance measurements to be taken efficiently and automatically, integrating seamlessly into the production line.</p>-->
+
+<!--              <p><strong>System Integration (Conceptual):</strong> The design included the conceptual integration of these tools into the existing manufacturing line, outlining how a central control system (e.g., PLC, HMI) would manage their synchronized operation for optimal throughput and quality.</p>-->
+
+<!--              <h4>The Results & Impact (Conceptual)</h4>-->
+<!--              <p>-->
+<!--                While this project remained in the design and conceptualization phase, the proposed automation upgrades demonstrated a clear path to significantly improving the efficiency and quality of diabetes test strip manufacturing. By automating precision spreading and implementing non-destructive resistance measurement, the design aimed to reduce material waste, minimize rework, and ensure higher product consistency. This project highlights my ability to analyze complex industrial processes, design innovative mechatronic solutions, and provide a robust blueprint for future automation initiatives.-->
+<!--              </p>-->
+
+<!--              <h4>Key Skills Demonstrated</h4>-->
+<!--              <ul>-->
+<!--                <li>Manufacturing Process Analysis</li>-->
+<!--                <li>Conceptual System Design & Architecture</li>-->
+<!--                <li>Precision Actuation (Servo Motor Control)</li>-->
+<!--                <li>Non-Destructive Testing (NDT) Principles</li>-->
+<!--                <li>Electrical Circuit Design (H-Bridge)</li>-->
+<!--                <li>Automation Strategy & Optimization</li>-->
+<!--                <li>Problem Identification & Solution Proposal</li>-->
+<!--                <li>Technical Specification & Planning</li>-->
+<!--              </ul>-->
+
+<!--              <p><strong>Tech:</strong> Servo Motors, H-Bridge Circuits, Sensors, PLC/HMI Integration (concept), CAD Design</p>-->
+
+<!--              <div class="media-gallery">-->
+<!--                <img src="static/sof.png" alt="Strip processing machine or testing interface">-->
+<!--                &lt;!&ndash; Add conceptual schematics or CAD images here when available &ndash;&gt;-->
+<!--              </div>-->
+<!--            </div>-->
+
+
+
+<!--        <div class="project">-->
+<!--          <h3>Smart Home Automation System with AI Control</h3>-->
+
+<!--          <p>This project is a comprehensive and ongoing effort to build an intelligent home automation system focused on energy conservation and environmental control. It integrates hardware, server-side development, and machine learning to create a proactive and efficient control system.</p>-->
+
+<!--          <h4>The Challenge</h4>-->
+<!--          <p>-->
+<!--            The objective is to move beyond simple automation and create a system that intelligently manages a home environment. The goal is to conserve power and maintain optimal comfort levels by making decisions based on real-time data, rather than just pre-programmed schedules.-->
+<!--          </p>-->
+
+<!--          <h4>My Solution & Technical Approach</h4>-->
+
+<!--          <p><strong>Hardware Layer:</strong> The system's foundation is built on an Arduino controller which is responsible for gathering real-time data from various sensors. These sensors monitor key environmental metrics such as temperature, humidity, time of day, and power usage.</p>-->
+
+<!--          <p><strong>Data & Server Layer:</strong> The Arduino communicates with a central server, which acts as a data hub. The server stores all the sensor readings and provides a platform for the system's control logic.</p>-->
+
+<!--          <p><strong>The AI Component:</strong> This is the most advanced part of the project. A custom-built AI model is being developed to analyze the historical and real-time power usage data. Based on these insights, the model makes autonomous control decisions—such as adjusting temperature set points or managing device power—to maximize efficiency and achieve a desired outcome.</p>-->
+
+<!--          <h4>Current Status & Impact</h4>-->
+<!--          <p>-->
+<!--            This project has a functional prototype that successfully gathers data and communicates with the server. The AI model is currently being trained to take control decisions based on power usage data. The final system will demonstrate the power of intelligent automation to significantly reduce energy costs and create a more comfortable, responsive living environment.-->
+<!--          </p>-->
+
+<!--          <h4>Key Skills Demonstrated</h4>-->
+<!--          <ul>-->
+<!--            <li>Hardware Prototyping (Arduino)</li>-->
+<!--            <li>Embedded Systems</li>-->
+<!--            <li>Server-Side Development</li>-->
+<!--            <li>AI & Machine Learning</li>-->
+<!--            <li>Data Analysis & Systems Integration</li>-->
+<!--          </ul>-->
+
+<!--          <p><strong>Tech:</strong> Arduino, Sensors, Flask, Python, AI/ML, Real-Time Monitoring</p>-->
+
+<!--          <div class="media-gallery">-->
+<!--            <img src="static/smarthome dashboard.png" alt="Smart Home Automation Dashboard UI">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </section>-->
+<!--&lt;!&ndash;    <section id="software-projects">&ndash;&gt;-->
+<!--&lt;!&ndash;        <h2>Software Projects</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="project">&ndash;&gt;-->
+<!--&lt;!&ndash;            <h3>Loan Management System</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>Backend tool for managing loans, sending automated email reminders, and exporting data via CSV and Google Sheets. Includes secure login, payment recording, and due-date tracking features.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <p><strong>Tech:</strong> Python, Flask, PostgreSQL, Flask-Mail, SMTP </p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="static/Dashboard 2.png" alt="Loan Management System Dashboard - Clients and Loans Overview">&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="static/Login page.png" alt="Loan Tracker Worker Login Screen">&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="static/Dashboard.png" alt="Loan Tracker Worker Login Screen">&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <div class="project">&ndash;&gt;-->
+<!--&lt;!&ndash;            <h3>Inventory Management API</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>RESTful API for maintaining inventory, with CRUD operations, Swagger documentation, and secure access control. Designed for scalable warehouse environments.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <p><strong>Tech:</strong> Flask, PostgreSQL, Docker, CI/CD</p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="static/sof.png" alt="Inventory API Swagger documentation mockup">&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <div class="project">&ndash;&gt;-->
+<!--&lt;!&ndash;            <h3>Expense Tracker (Full-Stack)</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>Secure web application for tracking and categorizing personal expenses with user authentication and data visualisation features.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <p><strong>Tech:</strong> Flask, JavaScript, CSS, Chart.js</p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="static/sof.png" alt="Expense Tracker Dashboard with category-wise charts">&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </section>&ndash;&gt;-->
+
+<!--    <section id="experience">-->
+<!--   <h2>-->
+<!--    Experience-->
+<!--   </h2>-->
+<!--   <ul>-->
+<!--    <li>-->
+<!--     <strong>-->
+<!--      Sava Technologies – Automation Engineer (London, UK) –-->
+<!--     </strong>-->
+<!--     Built Python tools for analysing 10k+ real-time sensor data points per test run, improving fault detection by 25%. Developed embedded control logic and data pipelines for a microlitre-precision dispensing system deployed in ISO-8 conditions. Optimised hardware iterations using SolidWorks and FDM 3D printing.-->
+<!--    </li>-->
+<!--    <li>-->
+<!--     <strong>-->
+<!--      Hoglet – Software Engineer / Co-Founder (Ibadan, Nigeria) –-->
+<!--     </strong>-->
+<!--     Led development of a Flask-based MVP that helped 500+ users convert plastic waste into redeemable credits. Built and maintained a secure backend and payment system, processing 1,000+ transactions during pilot deployment.-->
+<!--    </li>-->
+<!--    <li>-->
+<!--     <strong>-->
+<!--      British American Tobacco – Maintenance Engineer (Ibadan, Nigeria) –-->
+<!--     </strong>-->
+<!--     Digitised 200+ machine parts, improving maintenance accuracy and reducing unplanned downtime by 12%. Applied SAP PM and Lean tools to optimise preventive maintenance workflows; reduced out-of-order incidents by 80%.-->
+<!--    </li>-->
+<!--    <li>-->
+<!--     <strong>-->
+<!--      Automation Engineering Academy – Automation Engineer (Lagos, Nigeria) –-->
+<!--     </strong>-->
+<!--     Designed and deployed 4 PLC-powered solar traffic systems, achieving &gt;99% uptime in unstable grid areas. Delivered 5+ training sessions and reduced ongoing support needs by 50%.-->
+<!--    </li>-->
+<!--   </ul>-->
+<!--  </section>-->
+<!--     <section id="education">-->
+<!--   <h2>-->
+<!--    Education-->
+<!--   </h2>-->
+<!--   <ul>-->
+<!--    <li>-->
+<!--     <strong>-->
+<!--      MSc – Mechatronics Engineering and Automation –-->
+<!--     </strong>-->
+<!--     University of Strathclyde, UK (2023 – 2024). Dissertation: Smart energy forecasting using ARIMA and Fuzzy Logic. Focus: Embedded software, intelligent systems, data-driven automation.-->
+<!--    </li>-->
+<!--    <li>-->
+<!--     <strong>-->
+<!--      B.Eng. – Mechatronics Engineering –-->
+<!--     </strong>-->
+<!--     Afe Babalola University, Nigeria (2016 – 2020). Final Project: Designed a digital range-measuring and level-sensing system. Tools: Visual Basic, MATLAB, C, FluidSIM.-->
+<!--    </li>-->
+<!--   </ul>-->
+<!--  </section>-->
+
+<!--    <section id="contact">-->
+<!--        <h2>Contact</h2>-->
+<!--        <p>Email: danielayedegbe1@gmail.com</p>-->
+<!--        <p>GitHub: github.com/ayedegbe</p>-->
+<!--        <p>LinkedIn: linkedin.com/in/daniel-ayedegbe</p>-->
+<!--    </section>-->
+
+<!--    <footer>-->
+<!--        <p>© 2025 Daniel Ayedegbe</p>-->
+<!--    </footer>-->
+<!--</body>-->
+<!--</html>-->
