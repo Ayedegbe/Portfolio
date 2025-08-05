@@ -21,19 +21,19 @@ header {
 
 .logo {
   margin: 0;
-  color: white;
+  color: #00cc99;
 }
 
 nav a {
   margin-left: 2rem;
-  color: #ccc;
+  color: #00cc99;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 nav a:hover {
-  color: #fff;
+  color: #00ffcc;
 }
 
 /* Hero Section */
@@ -44,7 +44,7 @@ nav a:hover {
 
 .hero h1 {
   font-size: 2.5rem;
-  color: white;
+  color: #00cc99;
 }
 
 .hero p {
@@ -67,7 +67,7 @@ nav a:hover {
   background-color: #1a1a1a;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px rgba(0, 204, 153, 0.05);
   display: flex;
   flex-direction: column;
 }
@@ -80,21 +80,13 @@ nav a:hover {
   display: block;
 }
 
-/* If you want images to always fully show even if oddly shaped: */
-/*
-.project img {
-  object-fit: contain;
-  background: #222;
-}
-*/
-
 .project-details {
   padding: 1rem;
 }
 
 .project-details h3 {
   margin: 0;
-  color: #fff;
+  color: #00cc99;
 }
 
 .project-details p {
@@ -115,15 +107,16 @@ footer {
   text-align: center;
   padding: 2rem;
   font-size: 0.9rem;
-  color: #555;
+  color: #00cc99;
 }
 
+/* CV Button */
 .cv-button {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
-  background-color: #007bff;
-  color: white;
+  background-color: #00cc99;
+  color: #111;
   font-weight: bold;
   text-decoration: none;
   border-radius: 6px;
@@ -131,5 +124,90 @@ footer {
 }
 
 .cv-button:hover {
-  background-color: #0056b3;
+  background-color: #00b386;
+}
+
+/* Skills Section */
+.skills-section {
+  padding: 3rem 2rem;
+  background-color: #0d0d0d;
+  text-align: center;
+}
+
+.skills-section h2 {
+  color: #00cc99;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 0 10px rgba(0, 204, 153, 0.05);
+  transition: transform 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-card img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+  filter: brightness(1.2);
+}
+
+.skill-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 4rem 2rem;
+  background-color: #111;
+  text-align: center;
+}
+
+.contact-section h2 {
+  color: #00cc99;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-section p {
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.05rem;
+}
+
+/* Email Box */
+.email-box a {
+  display: inline-block;
+  background-color: #1a1a1a;
+  color: #00cc99;
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 204, 153, 0.15);
+  transition: background 0.3s ease;
+}
+
+.email-box a:hover {
+  background-color: #00cc99;
+  color: #111;
 }
