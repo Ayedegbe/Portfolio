@@ -1,654 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Daniel Ayedegbe | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Ayedegbe: Automation & Data Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth; /* Smooth scroll for anchor links */
+            /* Removed flex properties from body to rely on container's mx-auto */
+            width: 100%; /* Ensure body takes full width */
+            min-height: 100vh; /* Ensure body takes at least full viewport height */
+            @apply bg-gray-50 text-gray-800;
+        }
+        .section-padding {
+            @apply py-16 md:py-24;
+        }
+        .container {
+            /* max-w-7xl mx-auto ensures content within container is centered */
+            @apply max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8;
+        }
+        .nav-link {
+            @apply text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out;
+        }
+        .btn-primary {
+            @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300 ease-in-out;
+        }
+        .card {
+            @apply bg-white rounded-xl shadow-lg p-6 sm:p-8 flex flex-col items-center text-center transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl;
+        }
+        /* Simple fade-in animation for sections */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Override for elements that should not be centered within the container (e.g., specific text blocks) */
+        .text-left-aligned {
+            text-align: left !important;
+        }
+        .text-right-aligned {
+            text-align: right !important;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-<header>
-  <h2 class="logo">Daniel Ayedegbe</h2>
-  <nav>
-    <a href="#work">Work</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="https://drive.google.com/file/d/14Db_Tu6IiCirkQp9FCnMZ1tYcPZk0lxu/view?usp=drive_link" download style="color: #00ffcc;">Download CV</a>
-  </nav>
-</header>
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 w-full">
+        <nav class="container flex justify-between items-center py-4">
+            <a href="#hero" class="text-2xl font-bold text-indigo-600 rounded-lg p-2 transition duration-300 ease-in-out hover:bg-indigo-50">Daniel Ayedegbe</a>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <!-- Mobile Menu Button (Hamburger) - Hidden on larger screens -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 rounded-lg p-2">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <a href="#services" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50">Services</a>
+            <a href="#projects" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50">Projects</a>
+            <a href="#skills" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50">Skills</a>
+            <a href="#about" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50">About</a>
+            <a href="#contact" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50">Contact</a>
+        </div>
+    </header>
 
-<section class="hero">
-  <h1>Hi, These are a few of the projects I have worked on!</h1>
-  <p>
-    I build smart, reliable automation systems that blend mechanical design, software, and electronics into real-world solutions.
-  </p>
-  <a href="https://drive.google.com/file/d/14Db_Tu6IiCirkQp9FCnMZ1tYcPZk0lxu/view?usp=drive_link" download class="cv-button">Download CV</a>
-</section>
+    <!-- Hero Section -->
+    <section id="hero" class="section-padding bg-gradient-to-br from-indigo-50 to-white text-center rounded-b-3xl shadow-inner w-full">
+        <div class="container flex flex-col items-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                Automating Success for Small Businesses
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mb-10">
+                I help small businesses in London reclaim time and boost efficiency by automating tedious tasks, streamlining data, and implementing smart systems tailored to their unique needs.
+            </p>
+            <a href="#contact" class="btn-primary">
+                Book a Free Consultation
+                <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+            </a>
+        </div>
+    </section>
 
-<section id="work" class="projects">
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-gray-50 fade-in-section w-full">
+        <div class="container">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12">My Core Automation Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-  <div class="project">
-    <a href="projects/rover.html">
-      <img src="static/Rover cad.png" alt="Autonomous Rover">
-    </a>
-    <div class="project-details">
-      <h3>Autonomous Rover</h3>
-      <p> Designed and implemented an AI-driven control system for an autonomous mobile robot, leveraging LabVIEW, A* path planning, and sensor fusion for intelligent navigation and obstacle avoidance.
-      </p>
+                <!-- Service 1: Office & Web Workflow Automation -->
+                <div class="card">
+                    <!-- Icon Placeholder -->
+                    <svg class="w-12 h-12 text-indigo-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Office & Web Workflow Automation</h3>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        *Are you tired of endless copy/pasting, manual data entry, or repetitive online tasks eating into your team's day?*
+                    </p>
+                    <p class="text-gray-700 text-sm mb-4">
+                        I design and build custom scripts using Python and web automation tools that perform these digital tasks for you, freeing up valuable staff time.
+                    </p>
+                    <ul class="text-left text-gray-600 text-sm space-y-2">
+                        <li>&#10003; Save hours each week</li>
+                        <li>&#10003; Eliminate manual errors</li>
+                        <li>&#10003; Boost team productivity</li>
+                    </ul>
+                </div>
 
-    </div>
-  </div>
+                <!-- Service 2: Automated Data Reporting & Insights -->
+                <div class="card">
+                    <!-- Icon Placeholder -->
+                    <svg class="w-12 h-12 text-green-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3m0 0l3 3m-3-3v8m0-13a9 9 0 110 18 9 9 0 010-18z"></path></svg>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Automated Data Reporting & Insights</h3>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        *Are you overwhelmed by data in spreadsheets, struggling to get timely insights on sales or inventory?*
+                    </p>
+                    <p class="text-gray-700 text-sm mb-4">
+                        I create robust data pipelines using Python and SQL to automatically collect, clean, structure, and transform your data for clear, actionable reports or dashboards.
+                    </p>
+                    <ul class="text-left text-gray-600 text-sm space-y-2">
+                        <li>&#10003; Empower informed decision making</li>
+                        <li>&#10003; Access accurate, up to date information</li>
+                        <li>&#10003; Eliminate manual reporting effort</li>
+                    </ul>
+                </div>
 
-  <div class="project">
-    <a href="projects/traffic.html">
-      <img src="static/installed lights.jpeg" alt="Smart Traffic Light">
-    </a>
-    <div class="project-details">
-      <h3>Smart Traffic Light</h3>
-      <p>Developed an intelligent, solar-powered traffic light system utilizing a Haiwell PLC, HMI, and smart cameras for adaptive, real-time traffic management and 99% uptime.</p>
+                <!-- Service 3: Smart Business System Solutions (IoT & Energy Efficiency) -->
+                <div class="card">
+                    <!-- Icon Placeholder -->
+                    <svg class="w-12 h-12 text-blue-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 100 4m-3 2a2 2 0 100 4m-3 2a2 2 0 100 4m9-14a2 2 0 100 4m-3 2a2 2 0 100 4m-3 2a2 2 0 100 4m9-14a2 2 0 100 4m-3 2a2 2 0 100 4m-3 2a2 2 0 100 4"></path></svg>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Smart Business System Solutions</h3>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        *Looking to reduce energy costs, improve facility management, or gain basic real time operational insights?*
+                    </p>
+                    <p class="text-gray-700 text-sm mb-4">
+                        I design and implement intelligent sensor based systems and controls, like automated lighting or smart climate control, for smarter and more efficient environments.
+                    </p>
+                    <ul class="text-left text-gray-600 text-sm space-y-2">
+                        <li>&#10003; Lower operating costs</li>
+                        <li>&#10003;; Enhance efficiency & comfort</li>
+                        <li>&#10003; Gain real time operational data</li>
+                    </ul>
+                </div>
 
-    </div>
-  </div>
+                <!-- Service 4: Small-Scale Production & Robotics Automation -->
+                <div class="card">
+                    <!-- Icon Placeholder -->
+                    <svg class="w-12 h-12 text-red-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2V8z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-10m-4 10a2 2 0 11-4 0m4 0a2 2 0 104 0M17 13l2-3m-2 3a2 2 0 11-4 0m4 0a2 2 0 104 0m-8-5a2 2 0 11-4 0m4 0a2 2 0 104 0M3 20l4-10"></path></svg>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Small-Scale Production & Robotics Automation</h3>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        *Is your small production line facing bottlenecks, inconsistencies, or high manual labour in specific physical processes?*
+                    </p>
+                    <p class="text-gray-700 text-sm mb-4">
+                        I analyse your workflows and design bespoke automation solutions, integrating PLC programming, sensors, and custom mechanical adjustments for streamlined tasks.
+                    </p>
+                    <ul class="text-left text-gray-600 text-sm space-y-2">
+                        <li>&#10003; Increase production consistency</li>
+                        <li>&#10003; Improve throughput for specific tasks</li>
+                        <li>&#10003; Reduce manual effort & errors</li>
+                    </ul>
+                </div>
 
-  <div class="project">
-    <a href="projects/dispenser.html">
-      <img src="static/Dispenser setup.jpeg" alt="Fluid Dispenser">
-    </a>
-    <div class="project-details">
-      <h3>Automated Dispenser</h3>
-      <p>Engineered a custom precision fluid dispensing system integrating SolidWorks mechanical design, Arduino, and Python for automated, high-accuracy material application in manufacturing.</p>
+            </div>
+        </div>
+    </section>
 
-    </div>
-  </div>
+    <!-- Projects / Case Studies Section -->
+    <section id="projects" class="section-padding bg-white fade-in-section w-full">
+        <div class="container">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12">My Projects & Case Studies</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-  <div class="project">
-    <a href="projects/smart-home.html">
-      <img src="static/smarthome dashboard.png" alt="Smart Home Automation">
-    </a>
-    <div class="project-details">
-      <h3>Smart Home AI System</h3>
-      <p>Developed an AI-driven smart home system with a real-time dashboard for comprehensive house data, analyzing sensor inputs (temperature, humidity, power usage) to intelligently optimize power conservation and environmental control.</p>
+                <!-- Project 1: Automated Dispensing System -->
+                <div class="bg-gray-100 rounded-xl p-6 shadow-sm flex flex-col items-center justify-center text-center">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Automated Dispensing System</h3>
+                    <p class="text-gray-600 text-sm mb-4">Designed and deployed a microlitre-precision fluid dispensing system, improving dosing accuracy by over 95% in lab experiments.</p>
+                    <img src="static/Dispenser setup.jpeg" alt="Automated Dispensing System" class="rounded-lg mb-4 w-full h-auto max-w-sm aspect-video object-cover">
+                    <a href="projects/dispenser.html" target="_blank" class="text-indigo-600 hover:underline text-sm font-medium">View Project Details &rarr;</a>
+                </div>
 
-    </div>
-  </div>
+                <!-- Project 2: Autonomous Rover System -->
+                <div class="bg-gray-100 rounded-xl p-6 shadow-sm flex flex-col items-center justify-center text-center">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Autonomous Rover System</h3>
+                    <p class="text-gray-600 text-sm mb-4">Developed an intelligent control system for an autonomous mobile robot, demonstrating robust navigation and obstacle avoidance.</p>
+                    <img src="static/Rover cad.png" alt="Autonomous Rover" class="rounded-lg mb-4 w-full h-auto max-w-sm aspect-video object-cover">
+                    <a href="projects/rover.html" target="_blank" class="text-indigo-600 hover:underline text-sm font-medium">View Project Details &rarr;</a>
+                </div>
 
-  <div class="project">
-    <a href="projects/teststrip.html">
-      <img src="static/roller probes.png" alt="Diabetes Test Strip Automation">
-    </a>
-    <div class="project-details">
-      <h3>Diabetes Strip Automation</h3>
-      <p>Designed a conceptual automated system for non-destructive resistance measurement on printed sheets, utilizing roller resistor probes and an H-bridge for precision quality control.</p>
-    </div>
-  </div>
+                <!-- Project 3: Smart Traffic Light Control System -->
+                <div class="bg-gray-100 rounded-xl p-6 shadow-sm flex flex-col items-center justify-center text-center">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Smart Traffic Light System</h3>
+                    <p class="text-gray-600 text-sm mb-4">Built an adaptive PLC-controlled system with real-time sensor input, reducing intersection wait times by ~10%.</p>
+                    <img src="static/installed lights.jpeg" alt="Smart Traffic Light" class="rounded-lg mb-4 w-full h-auto max-w-sm aspect-video object-cover">
+                    <a href="projects/traffic.html" target="_blank" class="text-indigo-600 hover:underline text-sm font-medium">View Project Details &rarr;</a>
+                </div>
 
-</section>
+                <!-- Project 4: Smart Home Automation System -->
+                <div class="bg-gray-100 rounded-xl p-6 shadow-sm flex flex-col items-center justify-center text-center">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Smart Home AI System</h3>
+                    <p class="text-gray-600 text-sm mb-4">Developed an AI-driven smart home system for energy optimization and environmental control based on sensor data.</p>
+                    <img src="static/smarthome dashboard.png" alt="Smart Home Automation" class="rounded-lg mb-4 w-full h-auto max-w-sm aspect-video object-cover">
+                    <a href="projects/smart-home.html" target="_blank" class="text-indigo-600 hover:underline text-sm font-medium">View Project Details &rarr;</a>
+                </div>
 
-<section id="about" class="about">
-  <h2>About Me</h2>
-  <h1>Hi, I'm Daniel.</h1>
-  <p>
-    I’m a Mechatronics Engineer who loves solving problems and automating things, it’s what I do best.
-    Need a concept designed in CAD and beautifully rendered? I’ve got you.
-    Want it simulated first? I’m your guy.
-    Ready to go full build, from a DIY prototype to an industrial PLC-powered system? I’m still your guy.
-    Whether it’s small-scale or production-grade, I bring ideas to life with smart, practical engineering.
-  </p>
+                <!-- Project 5: Diabetes Test Strip Manufacturing Automation -->
+                <div class="bg-gray-100 rounded-xl p-6 shadow-sm flex flex-col items-center justify-center text-center">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Diabetes Strip Automation </h3>
+                    <p class="text-gray-600 text-sm mb-4">Designed a conceptual automated system for non-destructive resistance measurement in test strip manufacturing.</p>
+                    <img src="static/roller probes.png" alt="Diabetes Test Strip Automation" class="rounded-lg mb-4 w-full h-auto max-w-sm aspect-video object-cover">
+                    <a href="projects/teststrip.html" target="_blank" class="text-indigo-600 hover:underline text-sm font-medium">View Project Details &rarr;</a>
+                </div>
 
-</section>
+                <!-- Project 6: Loan Management System (Example software project - if desired) -->
+                 <div class="bg-gray-100 rounded-xl p-6 shadow-sm flex flex-col items-center justify-center text-center">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Loan Management System (Backend)</h3>
+                    <p class="text-gray-600 text-sm mb-4">Developed a Flask-based tool for loan management, automating reminders and data export, enhancing financial operations.</p>
+                    <img src="static/Dashboard 2.png" alt="Loan Management System" class="rounded-lg mb-4 w-full h-auto max-w-sm aspect-video object-cover">
+                    <a href="projects/loan.html" class="text-indigo-600 hover:underline text-sm font-medium">View Project Details &rarr;</a>
+                </div>
 
-<section id="skills" class="skills-section">
-  <h2>Skills & Tools</h2>
-  <div class="skills-grid">
+            </div>
+            <div class="text-center mt-12">
+                <p class="text-gray-600 text-lg">More compelling case studies coming soon!</p>
+                 <a href="https://drive.google.com/file/d/14Db_Tu6IiCirkQp9FCnMZ1tYcPZk0lxu/view?usp=drive_link" download style="color: #00ffcc;">Download CV</a>
+            </div>
+        </div>
+    </section>
 
-    <div class="skill-card">
-      <img src="static/icons/python.png" alt="Python Icon">
-      <p>Python, MATLAB, R, Labview</p>
-    </div>
+    <!-- Skills & Tools Section -->
+    <section id="skills" class="section-padding bg-gray-50 fade-in-section w-full">
+        <div class="container">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12">Skills & Tools</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
 
-    <div class="skill-card">
-      <img src="static/icons/cpp.png" alt="C++ Icon">
-      <p>C, C++, C#</p>
-    </div>
-
-    <div class="skill-card">
-      <img src="static/icons/cpu.png" alt="Microcontroller Icon">
-      <p>Arduino, Raspberry Pi, ESP8266, Siemens/AllenBradley/Beckoff PLC</p>
-    </div>
-
-    <div class="skill-card">
-      <img src="static/icons/ai.png" alt="AI Icon">
-      <p>OpenCV, TensorFlow, PyTorch</p>
-    </div>
-
-    <div class="skill-card">
-      <img src="static/icons/3d-cube.png" alt="CAD Icon">
-      <p>SolidWorks, AutoCAD, Blender</p>
-    </div>
-
-    <div class="skill-card">
-      <img src="static/icons/sciene.png" alt="Pilot Icon">
-      <p>React, Flask, Fast Api</p>
-    </div>
-
-  </div>
-</section>
-
-
-<section id="contact" class="contact-section">
-  <h2>Let’s Connect</h2>
-  <p>If you’d like to collaborate, ask a question, or just say hello — I’d love to hear from you.</p>
-
-  <div class="email-box">
-    <a href="mailto:danielayedegbe1@gmail.com">danielayedegbe1@gmail.com</a>
-    <p>GitHub: github.com/ayedegbe | LinkedIn: linkedin.com/in/daniel-ayedegbe</p>
-    <p>© 2025 Daniel Ayedegbe</p>
-  </div>
-</section>
-
-
+                <div class="card">
+                    <img src="static/icons/python.png" alt="Python Icon" class="w-10 h-10 mb-2 filter brightness-110">
+                    <p class="text-gray-700 font-medium text-sm">Python, MATLAB, R, LabVIEW</p>
+                </div>
+                <div class="card">
+                    <img src="static/icons/cpp.png" alt="C++ Icon" class="w-10 h-10 mb-2 filter brightness-110">
+                    <p class="text-gray-700 font-medium text-sm">C, C++, C#</p>
+                </div>
+                <div class="card">
+                    <img src="static/icons/cpu.png" alt="Microcontroller Icon" class="w-10 h-10 mb-2 filter brightness-110">
+                    <p class="text-gray-700 font-medium text-sm">Arduino, Raspberry Pi, PLCs (Siemens, Allen-Bradley, Beckoff)</p>
+                </div>
+                <div class="card">
+                    <img src="static/icons/ai.png" alt="AI Icon" class="w-10 h-10 mb-2 filter brightness-110">
+                    <p class="text-gray-700 font-medium text-sm">OpenCV, TensorFlow, PyTorch</p>
+                </div>
+                <div class="card">
+                    <img src="static/icons/3d-cube.png" alt="CAD Icon" class="w-10 h-10 mb-2 filter brightness-110">
+                    <p class="text-gray-700 font-medium text-sm">SolidWorks, AutoCAD, Blender</p>
+                </div>
+                 <div class="card">
+                    <img src="static/icons/sciene.png" alt="Web Dev Icon" class="w-10 h-10 mb-2 filter brightness-110">
+                    <p class="text-gray-700 font-medium text-sm">React, Flask, FastAPI, HTML, CSS</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-gradient-to-br from-white to-indigo-50 fade-in-section w-full">
+        <div class="container flex flex-col md:flex-row items-center gap-10">
+            <div class="md:w-1/3 flex justify-center">
+                <img src="static/IMG_5426.jpg" alt="Daniel Ayedegbe" class="rounded-full w-48 h-48 sm:w-64 sm:h-64 object-cover shadow-lg border-4 border-white">
+            </div>
+            <div class="md:w-2/3 text-center md:text-left">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">About Daniel Ayedegbe</h2>
+                <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-800 mb-4">Hi, I'm Daniel.</h1>
+                <p class="text-lg text-gray-700 mb-4">
+                    I am a Mechatronics Engineer who loves solving problems and automating things; it is what I do best. My passion lies in bridging the gap between mechanical, electrical, and software engineering, allowing me to excel at creating innovative solutions to complex engineering challenges.
+                </p>
+                <p class="text-lg text-gray-700 mb-4">
+                    Need a concept designed in CAD and beautifully rendered? I have got you. Want it simulated first? I am your guy. Ready to go full build, from a DIY prototype to an industrial PLC powered system? I am still your guy. Whether it is small scale or production grade, I bring ideas to life with smart, practical engineering.
+                </p>
+                <p class="text-lg text-gray-700">
+                    I believe that good data engineering is as much about listening, clarifying, and problem solving as it is about tools. I bring a collaborative mindset, attention to detail, and a commitment to continuous learning to every project, ensuring robust, future ready solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-gray-900 text-white fade-in-section w-full">
+        <div class="container text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8">Let's Discuss Your Automation Needs</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">
+                Ready to reclaim time and boost efficiency? Reach out to schedule a free, no obligation consultation to explore how automation can transform your small business.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="mailto:danielayedegbe1@gmail.com" class="btn-primary bg-indigo-500 hover:bg-indigo-600">
+                    <svg class="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                    Email Me
+                </a>
+                <a href="tel:+447868166333" class="btn-primary bg-transparent border border-white hover:bg-white hover:text-gray-900">
+                    <svg class="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.103 6.103l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                    Call Me: +44 7868 166333
+                </a>
+            </div>
+            <div class="mt-6 text-sm text-gray-400">
+                <p>GitHub: <a href="https://github.com/ayedegbe" target="_blank" class="hover:text-white underline">github.com/ayedegbe</a></p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/daniel-ayedegbe" target="_blank" class="hover:text-white underline">linkedin.com/in/daniel-ayedegbe</a></p>
+            </div>
+            <p class="text-sm text-gray-400 mt-8">Based in London, UK</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-8 text-center text-sm rounded-t-lg w-full">
+        <p>&copy; 2024 Daniel Ayedegbe. All rights reserved.</p>
+        <div class="mt-4 space-x-4">
+            <a href="https://linkedin.com/in/daniel-ayedegbe" target="_blank" class="hover:text-white transition duration-300 ease-in-out">LinkedIn</a>
+            <a href="https://github.com/ayedegbe" target="_blank" class="hover:text-white transition duration-300 ease-in-out">GitHub</a>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Intersection Observer for fade-in animations
+        const fadeInSections = document.querySelectorAll('.fade-in-section');
+
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0 // Trigger as soon as any part is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, observerOptions);
+
+        fadeInSections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Initial check for sections already in view on page load (Hero is now excluded)
+        window.addEventListener('load', () => {
+            // No need to explicitly add is-visible for Hero here, as it no longer has fade-in-section
+            // The observer will handle other sections if they are in initial view
+            fadeInSections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                    section.classList.add('is-visible');
+                    observer.unobserve(section); // Stop observing if already visible
+                }
+            });
+        });
+
+    </script>
 </body>
 </html>
-
-
-
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--  <meta charset="UTF-8" />-->
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
-<!--  <title>Daniel Ayedegbe</title>-->
-<!--  <link rel="stylesheet" href="style.css" />-->
-<!--</head>-->
-<!--<body>-->
-
-<!--  <header>-->
-<!--    <h2 class="logo">Daniel Ayedegbe</h2>-->
-<!--    <nav>-->
-<!--      <a href="#work">Work</a>-->
-<!--      <a href="#about">About</a>-->
-<!--      <a href="#contact">Contact</a>-->
-<!--    </nav>-->
-<!--  </header>-->
-
-<!--  <section class="hero">-->
-<!--    <h1>Hi, I'm Daniel Ayedegbe!</h1>-->
-<!--    <p>-->
-<!--      I'm Daniel, a Mechatronics Engineer passionate about building intelligent systems that work.-->
-<!--      I specialise in integrating hardware and software to solve real-world problems, from-->
-<!--      smart automation to complex control solutions.-->
-<!--    </p>-->
-<!--  </section>-->
-
-<!--  <section id="work" class="projects">-->
-<!--    <div class="project">-->
-<!--      <img src="static/rover code.jpeg" alt="Automatic Rover">-->
-<!--      <div class="project-details">-->
-<!--        <h3>Automatic Rover</h3>-->
-<!--        <p>2025</p>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="project">-->
-<!--      <img src="static/installed lights.jpeg" alt="Smart Traffic Light">-->
-<!--      <div class="project-details">-->
-<!--        <h3>Smart Traffic Light</h3>-->
-<!--        <p>2025</p>-->
-
-<!--      </div>-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Add more project cards as needed &ndash;&gt;-->
-<!--  </section>-->
-
-<!--  <section id="about" class="about">-->
-<!--    <h2>About Me</h2>-->
-<!--    <p>-->
-<!--      I'm a dedicated Mechatronics Engineer passionate about building innovative solutions that seamlessly integrate-->
-<!--      mechanical systems, electronics, and software. I enjoy solving real-world challenges through smart automation-->
-<!--      and intelligent systems design.-->
-<!--    </p>-->
-<!--  </section>-->
-
-<!--  <footer id="contact">-->
-<!--    <p>Contact: danielayedegbe1@gmail.com</p>-->
-<!--    <p>GitHub: github.com/ayedegbe | LinkedIn: linkedin.com/in/daniel-ayedegbe</p>-->
-<!--    <p>© 2025 Daniel Ayedegbe</p>-->
-<!--  </footer>-->
-
-<!--</body>-->
-<!--</html>-->
-
-
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <title>Daniel Ayedegbe | Project Portfolio</title>-->
-<!--    <link rel="stylesheet" href="./static/style.css">-->
-<!--      <style>-->
-<!--        body {-->
-<!--            margin: 0;-->
-<!--            font-family: 'Segoe UI', sans-serif;-->
-<!--            background: #f5f5f5;-->
-<!--            color: #333;-->
-<!--        }-->
-<!--        .project {-->
-<!--            padding: 1rem;-->
-<!--            margin: 1rem auto;-->
-<!--            background: white;-->
-<!--            border-radius: 8px;-->
-<!--            box-shadow: 0 0 10px rgba(0,0,0,0.1);-->
-<!--            max-width: 95%;-->
-<!--        }-->
-<!--        .project img {-->
-<!--            max-width: 800px;-->
-<!--            height: 2000px;-->
-<!--            display: block;-->
-<!--            margin: 1rem auto;-->
-<!--            border: 1px solid #ccc;-->
-<!--            border-radius: 6px;-->
-<!--            object-fit: contain;-->
-<!--        }-->
-<!--        video {-->
-<!--            width: 70%;-->
-<!--            max-height: 1600px;-->
-<!--            height: auto;-->
-<!--            display: block;-->
-<!--            margin: 1rem auto;-->
-<!--            border-radius: 6px;-->
-<!--            object-fit: cover;-->
-<!--        }-->
-<!--        header, section, footer {-->
-<!--            padding: 1rem;-->
-<!--            max-width: 95%;-->
-<!--            margin: auto;-->
-<!--        }-->
-<!--        nav {-->
-<!--            display: flex;-->
-<!--            flex-wrap: wrap;-->
-<!--            gap: 1rem;-->
-<!--            justify-content: center;-->
-<!--            padding: 1rem 0;-->
-<!--        }-->
-<!--        nav a {-->
-<!--            color: #007bff;-->
-<!--            text-decoration: none;-->
-<!--            font-weight: 500;-->
-<!--        }-->
-<!--        h1, h2, h3 {-->
-<!--            text-align: center;-->
-<!--        }-->
-<!--        ul {-->
-<!--            padding-left: 1.5rem;-->
-<!--        }-->
-<!--    </style>-->
-<!--</head>-->
-<!--<body>-->
-<!--    <header>-->
-<!--        <h1>Daniel Ayedegbe</h1>-->
-<!--        <p>Mechatronics & Software Engineer | Automation Specialist</p>-->
-<!--        <nav>-->
-<!--            <a href="#about">About</a>-->
-<!--            <a href="#software-projects">Software Projects</a>-->
-<!--            <a href="#mechatronics-projects">Mechatronics Projects</a>-->
-<!--            <a href="#experience">Experience</a>-->
-<!--            <a href="#contact">Contact</a>-->
-<!--        </nav>-->
-<!--    </header>-->
-
-<!--    <section id="about">-->
-<!--        <h2>About Me</h2>-->
-<!--        <p>I'm a dedicated Mechatronics Engineer passionate about building innovative solutions that seamlessly integrate mechanical systems, electronics, and advanced software. My expertise lies in transforming complex operational challenges into efficient, automated realities, directly helping businesses boost productivity, cut costs, and drive innovation.-->
-<!--My core strengths encompass mechanical design (SolidWorks), embedded systems development (Arduino, PLC), and the implementation of sophisticated control algorithms (LabVIEW, Python). I specialize in creating intelligent, integrated systems, from designing precision automation tools for manufacturing and developing autonomous navigation systems with AI-driven path planning, to building smart environmental control solutions.-->
-<!--I thrive on tackling real-world problems with a comprehensive engineering approach. Whether it's optimizing industrial processes, developing adaptive machinery, or leveraging cutting-edge technologies like AI for autonomous decision-making, my focus is always on delivering robust, high-value solutions tailored precisely to your needs.-->
-<!--Let's connect to explore how my mechatronics and automation expertise can bring your next project to life.</p>-->
-<!--    </section>-->
-
-<!--    <section id="mechatronics-projects">-->
-<!--        <h2>Mechatronics Projects</h2>-->
-
-<!--    <style>-->
-<!--      .project video,-->
-<!--        .project img {-->
-<!--          width: 300px;-->
-<!--          height: 300px;-->
-<!--          object-fit: cover;-->
-<!--          margin: 10px;-->
-<!--          border-radius: 8px;-->
-<!--          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);-->
-<!--        }-->
-
-<!--        /* ✅ Properly separated media gallery block */-->
-<!--        .media-gallery {-->
-<!--          display: flex;-->
-<!--          flex-wrap: wrap;-->
-<!--          gap: 1rem;-->
-<!--          justify-content: center;-->
-<!--          align-items: center;-->
-<!--        }-->
-
-<!--        .media-gallery img,-->
-<!--        .media-gallery video {-->
-<!--          width: 300px;-->
-<!--          height: 300px;-->
-<!--          object-fit: cover;-->
-<!--          border-radius: 8px;-->
-<!--          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);-->
-<!--        }-->
-
-<!--    </style>-->
-
-
-
-<!--        <div class="project">-->
-<!--          <h3>Automated Dispensing System</h3>-->
-
-<!--          <p>This project was a custom-built mechatronics solution developed to solve a common and costly problem in small-scale manufacturing: the inaccurate and time-consuming manual dispensing of fluids.</p>-->
-
-<!--          <h4>The Challenge</h4>-->
-<!--          <p>-->
-<!--            The client’s existing process relied on human operators to manually measure and dispense a specific fluid, which was prone to human error, led to inconsistent product quality, and resulted in significant material waste. The slow, repetitive task also created a bottleneck in their production line. My objective was to design and build a reliable, cost-effective automated system that could improve accuracy and free up staff for other critical tasks.-->
-<!--          </p>-->
-
-<!--          <h4>My Solution & Technical Approach</h4>-->
-
-<!--          <p><strong>Mechanical Design:</strong> Using SolidWorks, I designed a custom enclosure for the system, which was engineered for easy and secure mounting on the production floor. The design included a custom-machined nozzle holder and housed all the components neatly, creating a robust and professional final product.</p>-->
-
-<!--          <p><strong>Hardware Integration:</strong> The system’s core was an Arduino microcontroller which served as the brain. I integrated a precision peristaltic pump for accurate fluid delivery and a flow sensor for real-time volume monitoring, creating a closed-loop control system. A simple LCD and button interface were added for user interaction.</p>-->
-
-<!--          <p><strong>Software & Control:</strong> I wrote the control logic in Arduino C++ and a Nextion HMI. The code handled the user interface, controlled the pump’s speed and duration, and logged dispensing data to ensure consistency.</p>-->
-
-<!--          <h4>The Results & Impact</h4>-->
-<!--          <p>-->
-<!--            The final automated system delivered repeatable, accurate fluid dispensing, reducing material waste by an estimated 25% and eliminating human error. It significantly reduced task time and allowed the company to reallocate staff to more complex and value-adding roles. This project demonstrated the power of mechatronics to deliver tangible efficiency gains and cost savings for small businesses.-->
-<!--          </p>-->
-
-<!--          <h4>Key Skills Demonstrated</h4>-->
-<!--          <ul>-->
-<!--            <li>Mechanical Design (SolidWorks)</li>-->
-<!--            <li>Embedded Systems (Arduino)</li>-->
-<!--            <li>Control Systems & Programming (C++)</li>-->
-<!--            <li>Hardware-Software Integration</li>-->
-<!--            <li>Prototyping & System Testing</li>-->
-<!--          </ul>-->
-
-<!--          <p><strong>Tech:</strong> SolidWorks, C++, Arduino, Peristaltic pump, HMI design</p>-->
-
-<!--        <div class="media-gallery">-->
-<!--          <img src="static/Dispenser Image.jpeg" alt="Image of dispensing setup or SolidWorks CAD">-->
-<!--          <img src="static/Dispenser setup.jpeg" alt="Image of dispensing setup or SolidWorks CAD">-->
-
-<!--          <video controls>-->
-<!--            <source src="static/Disp Test.mp4" type="video/mp4">-->
-<!--            Your browser does not support the video tag.-->
-<!--          </video>-->
-
-<!--          <video controls>-->
-<!--            <source src="static/Disp vid.mp4" type="video/mp4">-->
-<!--            Your browser does not support the video tag.-->
-<!--          </video>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--       <div class="project">-->
-<!--          <h3>Autonomous Rover System</h3>-->
-
-<!--          <p>This project focused on the development of an intelligent control system for an autonomous mobile robot, demonstrating expertise in programming, sensor integration, and real-time decision-making.</p>-->
-
-<!--          <h4>The Challenge</h4>-->
-<!--          <p>-->
-<!--            The objective was to enable a pre-built rover platform to navigate a defined environment autonomously while avoiding obstacles. The key challenge was to develop a robust and reliable control algorithm that could process sensor data in real-time and make intelligent decisions to steer the rover without human intervention.-->
-<!--          </p>-->
-
-<!--          <h4>My Solution & Technical Approach</h4>-->
-
-<!--          <p><strong>Sensor Integration:</strong> I integrated an array of sensors, including ultrasonic sensors for object detection and a gyroscope to determine the rover's orientation. This sensor data was the primary input for the control system, providing the rover with a comprehensive understanding of its environment and its own position within it.</p>-->
-
-<!--          <p><strong>Control System Programming:</strong> The core of the system was programmed in LabVIEW. I developed the control algorithms using its graphical programming environment to process the sensor inputs and make real-time decisions. The system utilized an A* path planning algorithm to determine the most efficient route and issued commands to the motor drivers to execute the path while dynamically avoiding obstacles.</p>-->
-
-<!--          <h4>The Results & Impact</h4>-->
-<!--          <p>-->
-<!--            The final autonomous rover successfully demonstrated its ability to navigate a defined course and dynamically avoid both static and moving obstacles. The system proved that a well-conceived control algorithm, combined with advanced path planning and sensor fusion, could effectively enable a piece of hardware to function autonomously. This project highlights my ability to bridge the gap between hardware and intelligent control.-->
-<!--          </p>-->
-
-<!--          <h4>Key Skills Demonstrated</h4>-->
-<!--          <ul>-->
-<!--            <li>Robotics & Autonomous Navigation</li>-->
-<!--            <li>Control Systems & Programming (LabVIEW)</li>-->
-<!--            <li>Sensor Fusion & Integration (Ultrasonic, Gyroscope)</li>-->
-<!--            <li>A* Path Planning Algorithm</li>-->
-<!--            <li>Embedded Systems</li>-->
-<!--          </ul>-->
-
-<!--          <p><strong>Tech:</strong> LabVIEW, Arduino, Ultrasonic Sensor, Gyroscope, Coordinate Mapping</p>-->
-
-<!--          <div class="media-gallery">-->
-<!--            <img src="static/rover code.jpeg" alt="Autonomous Rover and LabVIEW programming session">-->
-<!--            <video controls>-->
-<!--              <source src="static/Rover vid.mp4" type="video/mp4">-->
-<!--              Your browser does not support the video tag.-->
-<!--            </video>-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--        <div class="project">-->
-<!--          <h3>Smart Traffic Light Control System</h3>-->
-
-<!--          <p>This project demonstrates a comprehensive, real-time control system for a smart traffic light, combining renewable energy, intelligent traffic detection, and robust programming. The system was designed to increase efficiency and reliability while operating autonomously off-grid.</p>-->
-
-<!--          <h4>The Challenge</h4>-->
-<!--          <p>-->
-<!--            The objective was to move beyond simple, timed traffic lights and create an intelligent control system that could adapt to real-time traffic conditions. A core requirement was for the system to be energy-independent, ensuring maximum uptime without relying on a constant external power supply.-->
-<!--          </p>-->
-
-<!--          <h4>My Solution & Technical Approach</h4>-->
-
-<!--          <p><strong>Intelligent Control:</strong> The system's brain was a Haiwell PLC, which was programmed to read inputs from multiple sources and make real-time decisions. The user interface was designed using the Haiwell HMI, providing an intuitive way to monitor and program the system.</p>-->
-
-<!--          <p><strong>Traffic Detection:</strong> I integrated Cloudbox smart cameras to perform real-time traffic detection. The data from these cameras allowed the PLC to dynamically adjust traffic light timings based on actual traffic flow, rather than a fixed schedule.</p>-->
-
-<!--          <p><strong>Renewable Energy System:</strong> To ensure exceptional reliability, I integrated solar panels and batteries, providing a self-sufficient power source. This power management system was engineered for 99% uptime, making the solution ideal for off-grid or remote locations.</p>-->
-
-<!--          <p><strong>Programming Logic:</strong> The system included advanced features such as time-of-day programming, allowing for different traffic patterns during peak and off-peak hours.</p>-->
-
-<!--          <h4>The Results & Impact</h4>-->
-<!--          <p>-->
-<!--            The final system successfully demonstrated the power of a fully integrated mechatronic's solution. By using smart cameras for traffic detection and time-of-day programming, it was able to significantly improve traffic flow and reduce congestion. The solar-powered design with a battery backup delivered on the critical requirement for 99% uptime, making it a reliable and sustainable solution.-->
-<!--          </p>-->
-
-<!--          <h4>Key Skills Demonstrated</h4>-->
-<!--          <ul>-->
-<!--            <li>PLC Programming & Control Systems</li>-->
-<!--            <li>HMI Design & User Interface</li>-->
-<!--            <li>Sensor Integration (Smart Cameras)</li>-->
-<!--            <li>Renewable Energy Systems (Solar & Battery)</li>-->
-<!--            <li>System Architecture & Integration</li>-->
-<!--          </ul>-->
-
-<!--          <p><strong>Tech:</strong> HMI, PLC (Ladder Logic), Solar Panels, Smart Cameras, Battery System</p>-->
-
-<!--          <div class="media-gallery">-->
-<!--            <img src="static/HMI junction.png" alt="HMI simulation of smart traffic light system">-->
-<!--            <img src="static/Traffic Light Panell.jpeg" alt="Installed traffic light control panel with PLC">-->
-<!--            <img src="static/installed lights.jpeg" alt="Installed traffic lights in outdoor environment">-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--        <div class="project">-->
-<!--              <h3>Automation Upgrades for Diabetes Test Strip Manufacturing (Concept & Design)</h3>-->
-
-<!--              <p>This project was a comprehensive design and conceptualization effort focused on identifying opportunities for automation and efficiency improvements within a diabetes test strip manufacturing process. The goal was to propose innovative mechatronic solutions to enhance production throughput, reduce errors, and optimize material handling.</p>-->
-
-<!--              <h4>The Challenge</h4>-->
-<!--              <p>-->
-<!--                The manufacturing of diabetes test strips involved several manual or semi-automated processes that were prone to human error, limited production speed, and resulted in inconsistencies—particularly in the precision spreading of materials and the quality control of resistance measurements. The challenge was to analyze the existing workflow, pinpoint specific bottlenecks, and design a conceptual automation solution to address them.-->
-<!--              </p>-->
-
-<!--              <h4>My Solution & Technical Approach</h4>-->
-
-<!--              <p><strong>Automated Precision Spreading Tool:</strong> I designed an automated tool incorporating a servo motor attachment to precisely control the squeegee placement for highly accurate and consistent material spreading. This module was conceived to eliminate the variability inherent in manual application, ensuring uniform layers on each test strip.</p>-->
-
-<!--              <p><strong>Non-Destructive Resistance Measurement Equipment:</strong> I conceptualized and specified a non-destructive quality control system. This equipment featured roller resistor probes designed to make contact with the test strips without damaging them. These probes were connected to an H-bridge circuit, allowing for precise resistance measurements to be taken efficiently and automatically, integrating seamlessly into the production line.</p>-->
-
-<!--              <p><strong>System Integration (Conceptual):</strong> The design included the conceptual integration of these tools into the existing manufacturing line, outlining how a central control system (e.g., PLC, HMI) would manage their synchronized operation for optimal throughput and quality.</p>-->
-
-<!--              <h4>The Results & Impact (Conceptual)</h4>-->
-<!--              <p>-->
-<!--                While this project remained in the design and conceptualization phase, the proposed automation upgrades demonstrated a clear path to significantly improving the efficiency and quality of diabetes test strip manufacturing. By automating precision spreading and implementing non-destructive resistance measurement, the design aimed to reduce material waste, minimize rework, and ensure higher product consistency. This project highlights my ability to analyze complex industrial processes, design innovative mechatronic solutions, and provide a robust blueprint for future automation initiatives.-->
-<!--              </p>-->
-
-<!--              <h4>Key Skills Demonstrated</h4>-->
-<!--              <ul>-->
-<!--                <li>Manufacturing Process Analysis</li>-->
-<!--                <li>Conceptual System Design & Architecture</li>-->
-<!--                <li>Precision Actuation (Servo Motor Control)</li>-->
-<!--                <li>Non-Destructive Testing (NDT) Principles</li>-->
-<!--                <li>Electrical Circuit Design (H-Bridge)</li>-->
-<!--                <li>Automation Strategy & Optimization</li>-->
-<!--                <li>Problem Identification & Solution Proposal</li>-->
-<!--                <li>Technical Specification & Planning</li>-->
-<!--              </ul>-->
-
-<!--              <p><strong>Tech:</strong> Servo Motors, H-Bridge Circuits, Sensors, PLC/HMI Integration (concept), CAD Design</p>-->
-
-<!--              <div class="media-gallery">-->
-<!--                <img src="static/sof.png" alt="Strip processing machine or testing interface">-->
-<!--                &lt;!&ndash; Add conceptual schematics or CAD images here when available &ndash;&gt;-->
-<!--              </div>-->
-<!--            </div>-->
-
-
-
-<!--        <div class="project">-->
-<!--          <h3>Smart Home Automation System with AI Control</h3>-->
-
-<!--          <p>This project is a comprehensive and ongoing effort to build an intelligent home automation system focused on energy conservation and environmental control. It integrates hardware, server-side development, and machine learning to create a proactive and efficient control system.</p>-->
-
-<!--          <h4>The Challenge</h4>-->
-<!--          <p>-->
-<!--            The objective is to move beyond simple automation and create a system that intelligently manages a home environment. The goal is to conserve power and maintain optimal comfort levels by making decisions based on real-time data, rather than just pre-programmed schedules.-->
-<!--          </p>-->
-
-<!--          <h4>My Solution & Technical Approach</h4>-->
-
-<!--          <p><strong>Hardware Layer:</strong> The system's foundation is built on an Arduino controller which is responsible for gathering real-time data from various sensors. These sensors monitor key environmental metrics such as temperature, humidity, time of day, and power usage.</p>-->
-
-<!--          <p><strong>Data & Server Layer:</strong> The Arduino communicates with a central server, which acts as a data hub. The server stores all the sensor readings and provides a platform for the system's control logic.</p>-->
-
-<!--          <p><strong>The AI Component:</strong> This is the most advanced part of the project. A custom-built AI model is being developed to analyze the historical and real-time power usage data. Based on these insights, the model makes autonomous control decisions—such as adjusting temperature set points or managing device power—to maximize efficiency and achieve a desired outcome.</p>-->
-
-<!--          <h4>Current Status & Impact</h4>-->
-<!--          <p>-->
-<!--            This project has a functional prototype that successfully gathers data and communicates with the server. The AI model is currently being trained to take control decisions based on power usage data. The final system will demonstrate the power of intelligent automation to significantly reduce energy costs and create a more comfortable, responsive living environment.-->
-<!--          </p>-->
-
-<!--          <h4>Key Skills Demonstrated</h4>-->
-<!--          <ul>-->
-<!--            <li>Hardware Prototyping (Arduino)</li>-->
-<!--            <li>Embedded Systems</li>-->
-<!--            <li>Server-Side Development</li>-->
-<!--            <li>AI & Machine Learning</li>-->
-<!--            <li>Data Analysis & Systems Integration</li>-->
-<!--          </ul>-->
-
-<!--          <p><strong>Tech:</strong> Arduino, Sensors, Flask, Python, AI/ML, Real-Time Monitoring</p>-->
-
-<!--          <div class="media-gallery">-->
-<!--            <img src="static/smarthome dashboard.png" alt="Smart Home Automation Dashboard UI">-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        </section>-->
-<!--&lt;!&ndash;    <section id="software-projects">&ndash;&gt;-->
-<!--&lt;!&ndash;        <h2>Software Projects</h2>&ndash;&gt;-->
-<!--&lt;!&ndash;        <div class="project">&ndash;&gt;-->
-<!--&lt;!&ndash;            <h3>Loan Management System</h3>&ndash;&gt;-->
-<!--&lt;!&ndash;            <p>Backend tool for managing loans, sending automated email reminders, and exporting data via CSV and Google Sheets. Includes secure login, payment recording, and due-date tracking features.</p>&ndash;&gt;-->
-<!--&lt;!&ndash;            <p><strong>Tech:</strong> Python, Flask, PostgreSQL, Flask-Mail, SMTP </p>&ndash;&gt;-->
-<!--&lt;!&ndash;            <img src="static/Dashboard 2.png" alt="Loan Management System Dashboard - Clients and Loans Overview">&ndash;&gt;-->
-<!--&lt;!&ndash;            <img src="static/Login page.png" alt="Loan Tracker Worker Login Screen">&ndash;&gt;-->
-<!--&lt;!&ndash;            <img src="static/Dashboard.png" alt="Loan Tracker Worker Login Screen">&ndash;&gt;-->
-<!--&lt;!&ndash;        </div>&ndash;&gt;-->
-
-<!--&lt;!&ndash;        <div class="project">&ndash;&gt;-->
-<!--&lt;!&ndash;            <h3>Inventory Management API</h3>&ndash;&gt;-->
-<!--&lt;!&ndash;            <p>RESTful API for maintaining inventory, with CRUD operations, Swagger documentation, and secure access control. Designed for scalable warehouse environments.</p>&ndash;&gt;-->
-<!--&lt;!&ndash;            <p><strong>Tech:</strong> Flask, PostgreSQL, Docker, CI/CD</p>&ndash;&gt;-->
-<!--&lt;!&ndash;            <img src="static/sof.png" alt="Inventory API Swagger documentation mockup">&ndash;&gt;-->
-<!--&lt;!&ndash;        </div>&ndash;&gt;-->
-
-<!--&lt;!&ndash;        <div class="project">&ndash;&gt;-->
-<!--&lt;!&ndash;            <h3>Expense Tracker (Full-Stack)</h3>&ndash;&gt;-->
-<!--&lt;!&ndash;            <p>Secure web application for tracking and categorizing personal expenses with user authentication and data visualisation features.</p>&ndash;&gt;-->
-<!--&lt;!&ndash;            <p><strong>Tech:</strong> Flask, JavaScript, CSS, Chart.js</p>&ndash;&gt;-->
-<!--&lt;!&ndash;            <img src="static/sof.png" alt="Expense Tracker Dashboard with category-wise charts">&ndash;&gt;-->
-<!--&lt;!&ndash;        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;    </section>&ndash;&gt;-->
-
-<!--    <section id="experience">-->
-<!--   <h2>-->
-<!--    Experience-->
-<!--   </h2>-->
-<!--   <ul>-->
-<!--    <li>-->
-<!--     <strong>-->
-<!--      Sava Technologies – Automation Engineer (London, UK) –-->
-<!--     </strong>-->
-<!--     Built Python tools for analysing 10k+ real-time sensor data points per test run, improving fault detection by 25%. Developed embedded control logic and data pipelines for a microlitre-precision dispensing system deployed in ISO-8 conditions. Optimised hardware iterations using SolidWorks and FDM 3D printing.-->
-<!--    </li>-->
-<!--    <li>-->
-<!--     <strong>-->
-<!--      Hoglet – Software Engineer / Co-Founder (Ibadan, Nigeria) –-->
-<!--     </strong>-->
-<!--     Led development of a Flask-based MVP that helped 500+ users convert plastic waste into redeemable credits. Built and maintained a secure backend and payment system, processing 1,000+ transactions during pilot deployment.-->
-<!--    </li>-->
-<!--    <li>-->
-<!--     <strong>-->
-<!--      British American Tobacco – Maintenance Engineer (Ibadan, Nigeria) –-->
-<!--     </strong>-->
-<!--     Digitised 200+ machine parts, improving maintenance accuracy and reducing unplanned downtime by 12%. Applied SAP PM and Lean tools to optimise preventive maintenance workflows; reduced out-of-order incidents by 80%.-->
-<!--    </li>-->
-<!--    <li>-->
-<!--     <strong>-->
-<!--      Automation Engineering Academy – Automation Engineer (Lagos, Nigeria) –-->
-<!--     </strong>-->
-<!--     Designed and deployed 4 PLC-powered solar traffic systems, achieving &gt;99% uptime in unstable grid areas. Delivered 5+ training sessions and reduced ongoing support needs by 50%.-->
-<!--    </li>-->
-<!--   </ul>-->
-<!--  </section>-->
-<!--     <section id="education">-->
-<!--   <h2>-->
-<!--    Education-->
-<!--   </h2>-->
-<!--   <ul>-->
-<!--    <li>-->
-<!--     <strong>-->
-<!--      MSc – Mechatronics Engineering and Automation –-->
-<!--     </strong>-->
-<!--     University of Strathclyde, UK (2023 – 2024). Dissertation: Smart energy forecasting using ARIMA and Fuzzy Logic. Focus: Embedded software, intelligent systems, data-driven automation.-->
-<!--    </li>-->
-<!--    <li>-->
-<!--     <strong>-->
-<!--      B.Eng. – Mechatronics Engineering –-->
-<!--     </strong>-->
-<!--     Afe Babalola University, Nigeria (2016 – 2020). Final Project: Designed a digital range-measuring and level-sensing system. Tools: Visual Basic, MATLAB, C, FluidSIM.-->
-<!--    </li>-->
-<!--   </ul>-->
-<!--  </section>-->
-
-<!--    <section id="contact">-->
-<!--        <h2>Contact</h2>-->
-<!--        <p>Email: danielayedegbe1@gmail.com</p>-->
-<!--        <p>GitHub: github.com/ayedegbe</p>-->
-<!--        <p>LinkedIn: linkedin.com/in/daniel-ayedegbe</p>-->
-<!--    </section>-->
-
-<!--    <footer>-->
-<!--        <p>© 2025 Daniel Ayedegbe</p>-->
-<!--    </footer>-->
-<!--</body>-->
-<!--</html>-->
