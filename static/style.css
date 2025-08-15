@@ -12,6 +12,8 @@ body {
   /* Ensure body takes full width and minimum height */
   width: 100%;
   min-height: 100vh;
+  color: black
+  background-color: white
   /* Tailwind classes for bg/text color are applied directly to body in index.html, so no need for custom CSS here unless overriding */
   /* The @apply was a comment, but ensuring no invalid syntax exists */
 }
@@ -77,7 +79,7 @@ nav a:hover {
 }
 
 .project {
-  background-color: #1a1a1a;
+  background-color: #aaa;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 204, 153, 0.05);
@@ -99,7 +101,7 @@ nav a:hover {
 
 .project-details h3 {
   margin: 0;
-  color: #00cc99;
+  color: #aaa;
 }
 
 .project-details p {
